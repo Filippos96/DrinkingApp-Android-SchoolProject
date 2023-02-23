@@ -1,5 +1,6 @@
 package com.example.drinkingapp
 
+import Create_Join_Screen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -22,7 +23,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android wha")
+                    Create_Join_Screen()
                 }
             }
         }
