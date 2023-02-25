@@ -13,7 +13,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Outline
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.drinkingapp.ui.theme.greenButtonColor1
 import com.example.drinkingapp.ui.theme.greenButtonColor2
 
@@ -28,6 +30,7 @@ fun GradientButton(
         colors = ButtonDefaults.buttonColors(
             containerColor = Color.Transparent
         ),
+        shape = RoundedCornerShape(30.dp),
         contentPadding = PaddingValues(),
         onClick = { onClick() }
     ) {
@@ -35,10 +38,14 @@ fun GradientButton(
             .width(340.dp)
             .height(100.dp)
             .clip(RoundedCornerShape(16.dp))
-            .padding(horizontal = 0.dp, vertical = 0.dp),
+            .padding(horizontal = 16.dp, vertical = 8.dp),
             contentAlignment = Alignment.Center
         ){
-            Text(text = text, color = textColor)
+            Text(
+                text = text,
+                color = textColor,
+                fontSize = 20.sp
+            )
         }
     }
 }

@@ -1,9 +1,12 @@
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -51,12 +54,48 @@ fun Content() {
             .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(
-            text = "Get started!",
-            style = MaterialTheme.typography.headlineMedium,
-            color = Color.White,
-            textAlign = TextAlign.Center
-        )
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+
+            Surface(
+                modifier = Modifier
+                    .weight(1f)
+                    .height(30.dp),
+                color = Color.Transparent
+            ) {
+                Icon(
+                    Icons.Default.ArrowBack,
+                    contentDescription = "BackButton",
+                    modifier = Modifier
+                        .size(ButtonDefaults.IconSize)
+                        .clickable {
+                            //   navController.popBackStack()
+                        }
+                )
+            }
+
+            Surface(
+                modifier = Modifier
+                    .weight(7f),
+                color = Color.Transparent
+            ) {
+                Text(
+                    text = "Get started!",
+                    style = MaterialTheme.typography.headlineMedium,
+                    color = Color.White,
+                    textAlign = TextAlign.Center
+                )
+            }
+
+            Surface(
+                modifier = Modifier
+                    .weight(1f)
+            ) {
+
+            }
+        }
 
         Spacer(modifier = Modifier.height(140.dp))
 
