@@ -1,3 +1,4 @@
+package com.example.drinkingapp
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -17,32 +18,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.drinkingapp.gameModeSelectionScreen
+import androidx.navigation.NavController
 import com.example.drinkingapp.R
 
-
 @Composable
-fun Create_Join_Screen() {
-    // A surface container using the 'background' color from the theme
-    Surface(
-        modifier = Modifier
-            .fillMaxSize()
-        ,
-        color = MaterialTheme.colorScheme.background,
-    ) {
-        Image(painter = painterResource(id = R.drawable.blackbackground),
-            contentDescription = "",
-            modifier = Modifier
-                .fillMaxWidth(),
-            contentScale = ContentScale.Crop
-        )
-        gameModeSelectionScreen()
-    }
-}
-
-
-@Composable
-fun Content() {
+fun GetStartedScreen(
+    navController: NavController
+) {
     var username  by remember { mutableStateOf("") }
     var lobbyCode  by remember { mutableStateOf("") }
 
@@ -55,47 +37,7 @@ fun Content() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        Row(
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-
-            Surface(
-                modifier = Modifier
-                    .weight(1f)
-                    .height(30.dp),
-                color = Color.Transparent
-            ) {
-                Icon(
-                    Icons.Default.ArrowBack,
-                    contentDescription = "BackButton",
-                    modifier = Modifier
-                        .size(ButtonDefaults.IconSize)
-                        .clickable {
-                            //   navController.popBackStack()
-                        }
-                )
-            }
-
-            Surface(
-                modifier = Modifier
-                    .weight(7f),
-                color = Color.Transparent
-            ) {
-                Text(
-                    text = "Get started!",
-                    style = MaterialTheme.typography.headlineMedium,
-                    color = Color.White,
-                    textAlign = TextAlign.Center
-                )
-            }
-
-            Surface(
-                modifier = Modifier
-                    .weight(1f)
-            ) {
-
-            }
-        }
+        NavbarTop(screenName = "Get Started!", backButton = true, navController = navController)
 
         Spacer(modifier = Modifier.height(140.dp))
 
@@ -124,7 +66,7 @@ fun Content() {
         Spacer(modifier = Modifier.height(50.dp))
 
         Button(
-            onClick = { /* do something */ },
+            onClick = { navController.navigate(route = Screen.GameMode.route) },
             shape = RoundedCornerShape(40),
             modifier = Modifier
                 .size(width = 200.dp, height = 60.dp),
@@ -139,7 +81,7 @@ fun Content() {
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(
-            onClick = { /* do something */ },
+            onClick = { navController.navigate(route = Screen.Lobby.route) },
             shape = RoundedCornerShape(40),
             modifier = Modifier
                 .size(width = 200.dp, height = 60.dp), // set the size of the button

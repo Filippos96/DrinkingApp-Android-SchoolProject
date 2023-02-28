@@ -17,10 +17,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.drinkingapp.ui.theme.*
 
 @Composable
-fun gameModeSelectionScreen() {
+fun GameModeSelectionScreen(
+    navController: NavController
+) {
 
     Column(
         modifier = Modifier
@@ -30,47 +33,7 @@ fun gameModeSelectionScreen() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        Row(
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-
-            Surface(
-                modifier = Modifier
-                    .weight(1f)
-                    .height(30.dp),
-                color = Color.Transparent
-            ) {
-                Icon(
-                    Icons.Default.ArrowBack,
-                    contentDescription = "BackButton",
-                    modifier = Modifier
-                        .size(ButtonDefaults.IconSize)
-                        .clickable {
-                            //   navController.popBackStack()
-                        }
-                )
-            }
-
-            Surface(
-                modifier = Modifier
-                    .weight(7f),
-                color = Color.Transparent
-            ) {
-                Text(
-                    text = "Game Mode",
-                    style = MaterialTheme.typography.headlineMedium,
-                    color = Color.White,
-                    textAlign = TextAlign.Center
-                )
-            }
-
-            Surface(
-                modifier = Modifier
-                    .weight(1f)
-            ) {
-
-            }
-        }
+        NavbarTop(screenName = "Game Mode", backButton = true, navController = navController)
 
         Spacer(modifier = Modifier.height(140.dp))
 
@@ -82,10 +45,9 @@ fun gameModeSelectionScreen() {
                     greenButtonColor2,
                     greenButtonColor1
                 )
-            )
-        ) {
-
-        }
+            ),
+            onClick = { navController.navigate(Screen.Lobby.route) }
+        )
 
         Spacer(modifier = Modifier.height(20.dp))
 
