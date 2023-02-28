@@ -65,33 +65,20 @@ fun GetStartedScreen(
 
         Spacer(modifier = Modifier.height(50.dp))
 
-        Button(
-            onClick = { navController.navigate(route = Screen.GameMode.route) },
-            shape = RoundedCornerShape(40),
-            modifier = Modifier
-                .size(width = 200.dp, height = 60.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFFFFA500), // set the background color of the button to bright orange
-                contentColor = Color.White // set the text color to white
-            )
-        ) {
-            Text(text = "CREATE") // set the text displayed on the button
-        }
+        OrangeButton(
+            navController = navController,
+            buttonText = "CREATE",
+            onClick = { navController.navigate(route = Screen.GameMode.route) }
+        )
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(
-            onClick = { navController.navigate(route = Screen.Lobby.route) },
-            shape = RoundedCornerShape(40),
-            modifier = Modifier
-                .size(width = 200.dp, height = 60.dp), // set the size of the button
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFFFFA500), // set the background color of the button to bright orange
-                contentColor = Color.White // set the text color to white
-            )
-        ) {
-            Text(text = "JOIN") // set the text displayed on the button
-        }
+        OrangeButton(
+            navController = navController,
+            buttonText = "JOIN",
+            onClick = { navController.navigate(route = Screen.Lobby.route) }
+        )
+
         Spacer(modifier = Modifier.height(100.dp))
     }
 
