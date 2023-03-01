@@ -1,6 +1,8 @@
 package com.example.drinkingapp
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -16,6 +18,8 @@ import com.example.drinkingapp.ui.theme.DrinkingAppTheme
 import com.example.drinkingapp.SetupNavGraph
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,14 +27,20 @@ class MainActivity : ComponentActivity() {
         setContent {
             DrinkingAppTheme {
 
+                // Write a message to the database
+              //  val database = Firebase.database("https://drinkingapp-e13dc-default-rtdb.europe-west1.firebasedatabase.app/")
+              //  val myRef = database.getReference("message")
+            //    Log.d(TAG, "Value is: " + myRef)
+
+             //   myRef.setValue("Hello, World!")
 
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
-                    AppStarter()
+                    ChatRoomScreen(viewModel = ChatRoomViewModel())
+                  //  AppStarter()
                 }
 
             }
