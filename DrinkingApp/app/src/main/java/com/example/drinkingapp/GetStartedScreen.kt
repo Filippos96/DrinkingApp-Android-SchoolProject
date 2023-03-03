@@ -26,8 +26,9 @@ fun GetStartedScreen(
     navController: NavController
 ) {
     var username  by remember { mutableStateOf("") }
-    var lobbyCode  by remember { mutableStateOf("") }
+    var lobbyKey by remember { mutableStateOf("") }
 
+    val gameRoomViewModel = GameRoomViewModel()
 
     Column(
         modifier = Modifier
@@ -57,8 +58,8 @@ fun GetStartedScreen(
 
         )
         OutlinedTextField(
-            value = lobbyCode,
-            onValueChange = { lobbyCode = it },
+            value = lobbyKey,
+            onValueChange = { lobbyKey = it },
             label = { Text(text = "Lobby Code") },
             placeholder = { Text(text = "Enter the Lobby Code") }
         )
@@ -68,7 +69,10 @@ fun GetStartedScreen(
         OrangeButton(
             navController = navController,
             buttonText = "CREATE",
-            onClick = { navController.navigate(route = Screen.GameMode.route) }
+            onClick = {
+                gameRoomViewModel.createNewLobby(username)
+                navController.navigate(route = Screen.GameMode.route)
+            }
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -76,7 +80,10 @@ fun GetStartedScreen(
         OrangeButton(
             navController = navController,
             buttonText = "JOIN",
-            onClick = { navController.navigate(route = Screen.Lobby.route) }
+            onClick = {
+                gameRoomViewModel.joinLobby(username, lobbyKey)
+                navController.navigate(route = Screen.Lobby.route)
+            }
         )
 
         Spacer(modifier = Modifier.height(100.dp))

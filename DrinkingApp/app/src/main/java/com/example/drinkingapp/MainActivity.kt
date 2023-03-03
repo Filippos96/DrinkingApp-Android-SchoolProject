@@ -39,8 +39,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ChatRoomScreen(viewModel = ChatRoomViewModel())
-                  //  AppStarter()
+                 //   ChatRoomScreen(viewModel = ChatRoomViewModel())
+                 //   GameRoomScreen(viewModel = GameRoomViewModel())
+                    AppStarter()
                 }
 
             }
