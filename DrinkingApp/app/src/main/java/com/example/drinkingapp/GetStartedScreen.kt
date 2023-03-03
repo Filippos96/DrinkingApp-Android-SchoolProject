@@ -23,12 +23,11 @@ import com.example.drinkingapp.R
 
 @Composable
 fun GetStartedScreen(
-    navController: NavController
+    navController: NavController,
+    gameRoomViewModel: GameRoomViewModel
 ) {
     var username  by remember { mutableStateOf("") }
     var lobbyKey by remember { mutableStateOf("") }
-
-    val gameRoomViewModel = GameRoomViewModel()
 
     Column(
         modifier = Modifier
@@ -82,7 +81,7 @@ fun GetStartedScreen(
             buttonText = "JOIN",
             onClick = {
                 gameRoomViewModel.joinLobby(username, lobbyKey)
-                navController.navigate(route = Screen.Lobby.route)
+                navController.navigate(route = Screen.Lobby.withArgs(lobbyKey))
             }
         )
 

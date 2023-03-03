@@ -20,7 +20,9 @@ import androidx.navigation.NavController
 
 @Composable
 fun LobbyHostScreen(
-    navController: NavController
+    navController: NavController,
+    gameRoomViewModel: GameRoomViewModel,
+    lobbyKey: String
 ) {
     Column(
         modifier = Modifier
@@ -31,19 +33,48 @@ fun LobbyHostScreen(
     ) {
         NavbarTop(screenName = "Lobby", backButton = true, navController = navController)
 
-        Spacer(modifier = Modifier.height(140.dp))
+        Spacer(modifier = Modifier.height(100.dp))
 
         Text(
             text = "Waiting...",
-            fontSize = 30.sp,
+            fontSize = 50.sp,
             color = Color.White
         )
         Text(
             text = "for more players to join",
+            fontSize = 20.sp,
             color = Color.White
         )
 
-        Spacer(modifier = Modifier.height(140.dp))
+        Spacer(modifier = Modifier.height(100.dp))
+
+        val currentLobby = gameRoomViewModel.lobbies.find { it.lobbyKey == lobbyKey }
+        if ( currentLobby != null ) {
+            for (player in currentLobby.players) {
+                Surface(
+                    modifier = Modifier
+                        .width(300.dp)
+                        .height(75.dp)
+                        .border(width = 2.dp, color = Color.White, shape = RoundedCornerShape(20.dp)),
+                    color = Color.Transparent
+
+                ) {
+                    Box(
+                        contentAlignment = Alignment.CenterStart
+                    ) {
+                        Text(text = player,
+                            modifier = Modifier
+                                .padding(start = 50.dp),
+                            fontSize = 20.sp,
+                            color = Color.White
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(20.dp))
+            }
+        }
+
     }
 }
 

@@ -22,7 +22,8 @@ import com.example.drinkingapp.ui.theme.*
 
 @Composable
 fun GameModeSelectionScreen(
-    navController: NavController
+    navController: NavController,
+    gameRoomViewModel: GameRoomViewModel
 ) {
 
     Column(

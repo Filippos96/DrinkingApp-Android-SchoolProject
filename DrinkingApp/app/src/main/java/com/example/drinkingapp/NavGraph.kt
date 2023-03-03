@@ -1,6 +1,7 @@
 package com.example.drinkingapp
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavArgument
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -9,7 +10,8 @@ import androidx.navigation.navArgument
 
 @Composable
 fun SetupNavGraph(
-    navController: NavHostController
+    navController: NavHostController,
+    gameRoomViewModel: GameRoomViewModel
 ){
 
     NavHost(
@@ -19,19 +21,25 @@ fun SetupNavGraph(
         composable(
             route = Screen.GetStarted.route
         ){
-            GetStartedScreen(navController)
+            GetStartedScreen(navController, gameRoomViewModel)
         }
 
         composable(
             route = Screen.GameMode.route
         ){
-            GameModeSelectionScreen(navController)
+            GameModeSelectionScreen(navController, gameRoomViewModel)
         }
 
         composable(
-            route = Screen.Lobby.route
-        ){
-            LobbyHostScreen(navController)
+            route = Screen.Lobby.route + "/{lobbyKey}",
+            arguments = listOf(
+                navArgument("lobbyKey") {
+                    type = NavType.StringType
+                }
+            )
+        ){ entry ->
+            entry.arguments?.getString("lobbyKey")
+                ?.let { LobbyHostScreen(navController, gameRoomViewModel, lobbyKey = it) }
         }
     }
     /*
