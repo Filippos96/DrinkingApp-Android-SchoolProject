@@ -69,8 +69,8 @@ fun GetStartedScreen(
             navController = navController,
             buttonText = "CREATE",
             onClick = {
-                gameRoomViewModel.createNewLobby(username)
-                navController.navigate(route = Screen.GameMode.route)
+                val newLobbyKey = gameRoomViewModel.createNewLobby(username)
+                navController.navigate(route = Screen.GameMode.withArgs(newLobbyKey))
             }
         )
 

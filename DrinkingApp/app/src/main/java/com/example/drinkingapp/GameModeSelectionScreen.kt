@@ -23,7 +23,8 @@ import com.example.drinkingapp.ui.theme.*
 @Composable
 fun GameModeSelectionScreen(
     navController: NavController,
-    gameRoomViewModel: GameRoomViewModel
+    gameRoomViewModel: GameRoomViewModel,
+    lobbyKey: String
 ) {
 
     Column(
@@ -47,7 +48,7 @@ fun GameModeSelectionScreen(
                     greenButtonColor1
                 )
             ),
-            onClick = { navController.navigate(Screen.Lobby.route) }
+            onClick = { navController.navigate(Screen.Lobby.withArgs(lobbyKey)) }
         )
 
         Spacer(modifier = Modifier.height(20.dp))

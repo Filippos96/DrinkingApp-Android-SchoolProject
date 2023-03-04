@@ -25,9 +25,15 @@ fun SetupNavGraph(
         }
 
         composable(
-            route = Screen.GameMode.route
-        ){
-            GameModeSelectionScreen(navController, gameRoomViewModel)
+            route = Screen.GameMode.route + "/{lobbyKey}",
+            arguments = listOf(
+                navArgument("lobbyKey") {
+                    type = NavType.StringType
+                }
+            )
+        ){ entry ->
+            entry.arguments?.getString("lobbyKey")
+                ?.let { GameModeSelectionScreen(navController, gameRoomViewModel, lobbyKey = it) }
         }
 
         composable(

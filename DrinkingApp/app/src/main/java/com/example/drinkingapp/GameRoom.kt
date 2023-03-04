@@ -62,10 +62,11 @@ class GameRoomViewModel : ViewModel() {
         })
     }
 
-    fun createNewLobby(username: String) {
+    fun createNewLobby(username: String) : String {
         val lobbyKey = generateRandomKey()
         val newLobby = Lobby(lobbyKey = lobbyKey, players = listOf(username))
         lobbyRef.child(lobbyKey).setValue(newLobby)
+        return lobbyKey
     }
 
     fun joinLobby(username: String, lobbyKey: String) {
