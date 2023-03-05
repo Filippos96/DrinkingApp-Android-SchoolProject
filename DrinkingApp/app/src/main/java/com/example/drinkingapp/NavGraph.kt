@@ -16,8 +16,14 @@ fun SetupNavGraph(
 
     NavHost(
         navController = navController,
-        startDestination = Screen.GetStarted.route
+        startDestination = Screen.StartScreen.route
     ){
+        composable(
+            route = Screen.StartScreen.route
+        ){
+            StartScreen(navController, gameRoomViewModel)
+        }
+
         composable(
             route = Screen.GetStarted.route
         ){
