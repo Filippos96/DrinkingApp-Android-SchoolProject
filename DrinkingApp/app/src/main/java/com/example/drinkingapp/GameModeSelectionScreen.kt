@@ -24,7 +24,7 @@ import com.example.drinkingapp.ui.theme.*
 fun GameModeSelectionScreen(
     navController: NavController,
     gameRoomViewModel: GameRoomViewModel,
-    lobbyKey: String
+    username: String
 ) {
 
     Column(
@@ -48,7 +48,11 @@ fun GameModeSelectionScreen(
                     greenButtonColor1
                 )
             ),
-            onClick = { navController.navigate(Screen.Lobby.withArgs(lobbyKey)) }
+            onClick = {
+                // Creates a new lobby and then Navigates to it
+                val newLobbyKey = gameRoomViewModel.createNewLobby(username)
+                navController.navigate(Screen.LobbyHost.withArgs(newLobbyKey, username))
+            }
         )
 
         Spacer(modifier = Modifier.height(20.dp))

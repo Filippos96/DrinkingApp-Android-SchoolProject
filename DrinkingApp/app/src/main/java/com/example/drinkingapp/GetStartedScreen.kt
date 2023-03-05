@@ -69,8 +69,12 @@ fun GetStartedScreen(
             navController = navController,
             buttonText = "CREATE",
             onClick = {
-                val newLobbyKey = gameRoomViewModel.createNewLobby(username)
-                navController.navigate(route = Screen.GameMode.withArgs(newLobbyKey))
+                // Check for validation. If OK then navigate to next screen
+                // TODO Display the error messages to the user. Idea: Maybe change the return
+                //  type from Bool to LisfOf Strings so we can get the reasons why it was not OK
+                if (gameRoomViewModel.checkValidUsername(username)) {
+                    navController.navigate(route = Screen.GameMode.withArgs(username))
+                }
             }
         )
 
@@ -80,8 +84,10 @@ fun GetStartedScreen(
             navController = navController,
             buttonText = "JOIN",
             onClick = {
-                gameRoomViewModel.joinLobby(username, lobbyKey)
-                navController.navigate(route = Screen.Lobby.withArgs(lobbyKey))
+                if (gameRoomViewModel.checkValidUsername(username)) {
+                    gameRoomViewModel.joinLobby(username, lobbyKey)
+                    navController.navigate(route = Screen.LobbyGuest.withArgs(lobbyKey, username))
+                }
             }
         )
 

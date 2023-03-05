@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun LobbyHostScreen(
+fun LobbyGuestScreen(
     navController: NavController,
     gameRoomViewModel: GameRoomViewModel,
     lobbyKey: String,
@@ -73,24 +73,18 @@ fun LobbyHostScreen(
                 }
 
                 Spacer(modifier = Modifier.height(20.dp))
+
             }
-
-            OrangeButton(
-                navController = navController,
-                buttonText = "START",
-                onClick = {
-
-                }
-            )
 
             OrangeButton(
                 navController = navController,
                 buttonText = "LEAVE",
                 onClick = {
-                    gameRoomViewModel.deleteLobby(lobbyKey)
+                    gameRoomViewModel.removePlayerFromLobby(username, lobbyKey)
                     navController.popBackStack()
                 }
             )
+
         }
 
     }
@@ -98,7 +92,7 @@ fun LobbyHostScreen(
 
 @Preview
 @Composable
-fun LobbyPreview() {
+fun LobbyGuestPreview() {
 
     Surface(
         modifier = Modifier

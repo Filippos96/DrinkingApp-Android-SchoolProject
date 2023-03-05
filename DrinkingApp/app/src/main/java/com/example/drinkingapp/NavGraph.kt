@@ -25,27 +25,47 @@ fun SetupNavGraph(
         }
 
         composable(
-            route = Screen.GameMode.route + "/{lobbyKey}",
+            route = Screen.GameMode.route + "/{username}",
             arguments = listOf(
-                navArgument("lobbyKey") {
+                navArgument("username") {
                     type = NavType.StringType
                 }
             )
         ){ entry ->
-            entry.arguments?.getString("lobbyKey")
-                ?.let { GameModeSelectionScreen(navController, gameRoomViewModel, lobbyKey = it) }
+            val username = entry.arguments?.getString("username") ?: ""
+            GameModeSelectionScreen(navController, gameRoomViewModel, username)
         }
 
         composable(
-            route = Screen.Lobby.route + "/{lobbyKey}",
+            route = Screen.LobbyHost.route + "/{lobbyKey}/{username}",
             arguments = listOf(
                 navArgument("lobbyKey") {
+                    type = NavType.StringType
+                },
+                navArgument("username") {
                     type = NavType.StringType
                 }
             )
         ){ entry ->
-            entry.arguments?.getString("lobbyKey")
-                ?.let { LobbyHostScreen(navController, gameRoomViewModel, lobbyKey = it) }
+            val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
+            val username = entry.arguments?.getString("username") ?: ""
+            LobbyHostScreen(navController, gameRoomViewModel, lobbyKey, username)
+        }
+
+        composable(
+            route = Screen.LobbyGuest.route + "/{lobbyKey}/{username}",
+            arguments = listOf(
+                navArgument("lobbyKey") {
+                    type = NavType.StringType
+                },
+                navArgument("username") {
+                    type = NavType.StringType
+                }
+            )
+        ) { entry ->
+            val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
+            val username = entry.arguments?.getString("username") ?: ""
+            LobbyGuestScreen(navController, gameRoomViewModel, lobbyKey, username)
         }
     }
     /*

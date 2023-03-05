@@ -49,7 +49,10 @@ class GameRoomViewModel : ViewModel() {
             }
 
             override fun onChildRemoved(snapshot: DataSnapshot) {
-                TODO("Not yet implemented")
+                val removedLobby = snapshot.getValue(Lobby::class.java)
+                removedLobby?.let { it: Lobby ->
+                    _lobbies.remove(it)
+                }
             }
 
             override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
@@ -80,6 +83,25 @@ class GameRoomViewModel : ViewModel() {
         }
     }
 
+    fun removePlayerFromLobby(username: String, lobbyKey: String) {
+        val lobbyToUpdate = _lobbies.find { it.lobbyKey == lobbyKey }
+        lobbyToUpdate?.let {
+            it.players = it.players.filter { it != username }
+            lobbyRef.child(lobbyKey).setValue(it) // Update the lobby in Firebase
+        }
+    }
+
+    // Deletes the lobby by using the lobbyKey provided
+    fun deleteLobby(lobbyKey: String) {
+        val lobbyToDelete = _lobbies.find { it.lobbyKey == lobbyKey }
+
+        if (lobbyToDelete != null) {
+            _lobbies.remove(lobbyToDelete)
+            lobbyRef.child(lobbyKey).removeValue() // Remove the lobby from Firebase
+        }
+    }
+
+    // Generates a random lobby key
     private fun generateRandomKey() : String {
         var uniqueKey: String
         do {
@@ -93,6 +115,14 @@ class GameRoomViewModel : ViewModel() {
             }
         } while (uniqueKey.isEmpty())
         return uniqueKey
+    }
+
+    // Checks if a username is valid or not
+    fun checkValidUsername(username: String) : Boolean {
+        if (username.length < 3 || username.length > 10) {
+            return false
+        }
+        return true
     }
 }
 
