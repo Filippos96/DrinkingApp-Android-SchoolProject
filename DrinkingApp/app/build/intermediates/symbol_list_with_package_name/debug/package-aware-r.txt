@@ -99,6 +99,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+drawable beeremoji
 drawable blackbackground
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark

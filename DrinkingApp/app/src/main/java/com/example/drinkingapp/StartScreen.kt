@@ -11,6 +11,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -38,10 +41,13 @@ fun StartScreen(
     var popupControl by remember {
         mutableStateOf((true))
     }
+    var blurControl by remember {
+        mutableStateOf(10)
+    }
 
     Column(
         modifier = Modifier
-            .blur(50.dp)//This does not work as intended
+            .blur(blurControl.dp)//This does not work as intended
             .fillMaxSize()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -50,7 +56,7 @@ fun StartScreen(
         Spacer(modifier = Modifier.height(177.dp))
 
         Image(
-            painter = painterResource(id = R.drawable.getstarted),
+            painter = painterResource(id = R.drawable.beeremoji),
             contentDescription = "beer",
             modifier = Modifier.size(160.dp)
         )
@@ -80,6 +86,7 @@ fun StartScreen(
 
                 modifier = Modifier
                     .padding(30.dp)
+                    .border(width = 3.dp, shape = RoundedCornerShape(16.dp), color = Color.Black)
                     .background(
                         color = Color(0xFFFFA500),
                         shape = RoundedCornerShape(16.dp)
@@ -108,10 +115,11 @@ fun StartScreen(
                             Button(
                                 onClick = {
                                     popupControl = false
+                                    blurControl = 0
                                 },
                                 shape = RoundedCornerShape(40),
                                 colors = ButtonDefaults.buttonColors(
-                                    backgroundColor = Color.Black,
+                                    containerColor = Color.Black,
                                     contentColor = Color.White
                                 ),
                                 modifier = Modifier.width(100.dp)
