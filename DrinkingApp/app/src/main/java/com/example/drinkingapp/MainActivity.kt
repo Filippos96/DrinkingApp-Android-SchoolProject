@@ -55,6 +55,7 @@ fun AppStarter() {
     lateinit var navController: NavHostController
 
     val gameRoomViewModel = GameRoomViewModel()
+    val promptViewModel = PromptViewModel()
 
     // Setting the background
     Surface(
@@ -71,6 +72,6 @@ fun AppStarter() {
         )
         // Here you specify which screen you want to run
         navController = rememberNavController()
-        SetupNavGraph(navController = navController, gameRoomViewModel)
+        SetupNavGraph(navController = navController, gameRoomViewModel, promptViewModel)
     }
 }

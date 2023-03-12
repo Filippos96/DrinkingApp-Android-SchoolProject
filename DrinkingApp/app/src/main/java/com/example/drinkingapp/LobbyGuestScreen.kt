@@ -1,12 +1,13 @@
 package com.example.drinkingapp
 
+import android.util.Log
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -17,6 +18,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 @Composable
 fun LobbyGuestScreen(
@@ -25,6 +31,40 @@ fun LobbyGuestScreen(
     lobbyKey: String,
     username: String
 ) {
+
+    LaunchedEffect(Unit){
+        val database = Firebase.database
+        val lobbyRef = database.getReference("lobbies")
+
+        lobbyRef.addChildEventListener(object : ChildEventListener {
+            override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
+
+            }
+
+            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
+                val updatedLobby = snapshot.getValue(Lobby::class.java)
+                updatedLobby?.let { it: Lobby ->
+                    if ( it.gameStarted ) {
+                        lobbyRef.removeEventListener(this)
+                        navController.navigate(Screen.CreatePrompt.route)
+                    }
+                }
+            }
+
+            override fun onChildRemoved(snapshot: DataSnapshot) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -75,7 +115,13 @@ fun LobbyGuestScreen(
                 Spacer(modifier = Modifier.height(20.dp))
 
             }
+/*
+            var gameHasStarted by remember { mutableStateOf(false) }
 
+            if (gameHasStarted) {
+                navController.navigate(Screen.GetStarted.route)
+            }
+*/
             OrangeButton(
                 navController = navController,
                 buttonText = "LEAVE",

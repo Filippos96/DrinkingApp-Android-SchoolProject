@@ -1,5 +1,6 @@
 package com.example.drinkingapp
 
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -18,7 +19,8 @@ import kotlinx.coroutines.tasks.await
 
 data class Lobby(
     val lobbyKey: String = "",
-    var players: List<String> = emptyList()
+    var players: List<String> = emptyList(),
+    var gameStarted: Boolean = false
 )
 
 class GameRoomViewModel : ViewModel() {
@@ -40,6 +42,7 @@ class GameRoomViewModel : ViewModel() {
 
             override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
                 val updatedLobby = snapshot.getValue(Lobby::class.java)
+                Log.d("Hej", updatedLobby.toString())
                 updatedLobby?.let { it: Lobby ->
                     val index = _lobbies.indexOfFirst { it.lobbyKey == updatedLobby.lobbyKey }
                     if (index != -1) {
@@ -79,6 +82,14 @@ class GameRoomViewModel : ViewModel() {
         if (lobbyToUpdate != null) {
             val updatedPlayers = lobbyToUpdate.players.toMutableList().apply { add(username) }
             lobbyToUpdate.players = updatedPlayers
+            lobbyRef.child(lobbyToUpdate.lobbyKey).setValue(lobbyToUpdate)
+        }
+    }
+
+    fun startGame(lobbyKey: String){
+        var lobbyToUpdate = _lobbies.find { it.lobbyKey == lobbyKey }
+        if (lobbyToUpdate != null) {
+            lobbyToUpdate.gameStarted = true
             lobbyRef.child(lobbyToUpdate.lobbyKey).setValue(lobbyToUpdate)
         }
     }

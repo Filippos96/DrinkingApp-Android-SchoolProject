@@ -18,6 +18,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import com.example.drinkingapp.R
 
@@ -72,13 +73,14 @@ fun GetStartedScreen(
                 // Check for validation. If OK then navigate to next screen
                 // TODO Display the error messages to the user. Idea: Maybe change the return
                 //  type from Bool to LisfOf Strings so we can get the reasons why it was not OK
+
                 if (gameRoomViewModel.checkValidUsername(username)) {
                     navController.navigate(route = Screen.GameMode.withArgs(username))
                 }
             }
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         OrangeButton(
             navController = navController,

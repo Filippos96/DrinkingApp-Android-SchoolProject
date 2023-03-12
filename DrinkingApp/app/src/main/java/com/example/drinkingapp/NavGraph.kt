@@ -11,7 +11,8 @@ import androidx.navigation.navArgument
 @Composable
 fun SetupNavGraph(
     navController: NavHostController,
-    gameRoomViewModel: GameRoomViewModel
+    gameRoomViewModel: GameRoomViewModel,
+    promptViewModel: PromptViewModel
 ){
 
     NavHost(
@@ -66,6 +67,37 @@ fun SetupNavGraph(
             val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
             val username = entry.arguments?.getString("username") ?: ""
             LobbyGuestScreen(navController, gameRoomViewModel, lobbyKey, username)
+        }
+        
+        composable(
+            route = Screen.CreatePrompt.route
+        ){
+            CreatePrompt(navController = navController, gameRoomViewModel = gameRoomViewModel, promptViewModel = promptViewModel)
+        }
+
+        composable(
+            route = Screen.LoadingScreen.route,
+            arguments = listOf(
+                navArgument("lobbyKey") {
+                    type = NavType.StringType
+                }
+            )
+
+        ){ entry ->
+            val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
+            LoadingScreen(navController = navController, gameRoomViewModel = gameRoomViewModel, promptViewModel = promptViewModel, lobbyKey = lobbyKey)
+        }
+
+        composable(
+            route = Screen.QuestionScreen.route,
+            arguments = listOf(
+            navArgument("lobbyKey") {
+                type = NavType.StringType
+            }
+            )
+        ){entry ->
+            val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
+            QuestionScreen(navController = navController, gameRoomViewModel = gameRoomViewModel, promptViewModel = promptViewModel, lobbyKey = lobbyKey)
         }
     }
     /*
