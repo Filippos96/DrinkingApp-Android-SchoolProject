@@ -6,6 +6,9 @@ sealed class Screen(val route: String){
     object LobbyHost: Screen(route = "LobbyHostScreen")
     object LobbyGuest: Screen(route = "LobbyGuestScreen")
     object CreatePrompt: Screen(route = "CreatePromptScreen")
+    object Waiting: Screen(route = "WaitingScreen")
+    object Questions: Screen(route = "QuestionScreen")
+    object Result: Screen(route = "ResultScreen")
 
     fun withArgs(vararg args: String): String {
         return buildString {

@@ -49,11 +49,25 @@ fun GameModeSelectionScreen(
                 )
             ),
             onClick = {
-                // Creates a new lobby and then Navigates to it
-                val newLobbyKey = gameRoomViewModel.createNewLobby(username)
+
+                navController.navigate(Screen.LobbyHost.withArgs(username))
+            }
+        )
+        GradientButton(
+            text = "Who´s most likely?",
+            textColor = Color.White,
+            gradient = Brush.horizontalGradient(
+                colors = listOf(
+                    greenButtonColor2,
+                    greenButtonColor1
+                )
+            ),
+            onClick = {
+                val newLobbyKey = gameRoomViewModel.createNewLobby(username, navController)
                 navController.navigate(Screen.LobbyHost.withArgs(newLobbyKey, username))
             }
         )
+
 
         Spacer(modifier = Modifier.height(20.dp))
 

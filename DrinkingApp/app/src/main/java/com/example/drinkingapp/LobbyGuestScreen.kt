@@ -49,44 +49,6 @@ fun LobbyGuestScreen(
 
         Spacer(modifier = Modifier.height(100.dp))
 
-        val currentLobby = gameRoomViewModel.lobbies.find { it.lobbyKey == lobbyKey }
-        if ( currentLobby != null ) {
-            for (player in currentLobby.players) {
-                Surface(
-                    modifier = Modifier
-                        .width(300.dp)
-                        .height(75.dp)
-                        .border(width = 2.dp, color = Color.White, shape = RoundedCornerShape(20.dp)),
-                    color = Color.Transparent
-
-                ) {
-                    Box(
-                        contentAlignment = Alignment.CenterStart
-                    ) {
-                        Text(text = player,
-                            modifier = Modifier
-                                .padding(start = 50.dp),
-                            fontSize = 20.sp,
-                            color = Color.White
-                        )
-                    }
-                }
-
-                Spacer(modifier = Modifier.height(20.dp))
-
-            }
-
-            OrangeButton(
-                navController = navController,
-                buttonText = "LEAVE",
-                onClick = {
-                    gameRoomViewModel.removePlayerFromLobby(username, lobbyKey)
-                    navController.popBackStack()
-                }
-            )
-
-        }
-
     }
 }
 

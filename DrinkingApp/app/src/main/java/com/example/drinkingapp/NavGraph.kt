@@ -1,7 +1,6 @@
 package com.example.drinkingapp
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavArgument
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -67,6 +66,56 @@ fun SetupNavGraph(
             val username = entry.arguments?.getString("username") ?: ""
             LobbyGuestScreen(navController, gameRoomViewModel, lobbyKey, username)
         }
+
+        composable(
+            route = Screen.CreatePrompt.route + "/{lobbyKey}",
+            arguments = listOf(
+                navArgument("lobbyKey") {
+                    type = NavType.StringType
+                }
+            )
+        ){ entry ->
+            val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
+            CreatePrompt(navController, gameRoomViewModel, lobbyKey)
+        }
+
+        composable(
+            route = Screen.Waiting.route + "/{lobbyKey}",
+            arguments = listOf(
+                navArgument("lobbyKey") {
+                    type = NavType.StringType
+                }
+            )
+        ){ entry ->
+            val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
+            WaitingScreen(navController, gameRoomViewModel, lobbyKey)
+        }
+
+        composable(
+            route = Screen.Questions.route + "/{lobbyKey}",
+            arguments = listOf(
+                navArgument("lobbyKey") {
+                    type = NavType.StringType
+                }
+            )
+        ){ entry ->
+            val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
+            QuestionScreen(navController, gameRoomViewModel, lobbyKey)
+        }
+
+        composable(
+            route = Screen.Result.route + "/{lobbyKey}",
+            arguments = listOf(
+                navArgument("lobbyKey") {
+                    type = NavType.StringType
+                }
+            )
+        ){ entry ->
+            val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
+            ResultScreen(navController, gameRoomViewModel, lobbyKey)
+        }
+
+
     }
     /*
     NavHost(

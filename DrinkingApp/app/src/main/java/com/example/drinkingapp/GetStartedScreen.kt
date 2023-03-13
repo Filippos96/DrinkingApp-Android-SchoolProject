@@ -72,9 +72,8 @@ fun GetStartedScreen(
                 // Check for validation. If OK then navigate to next screen
                 // TODO Display the error messages to the user. Idea: Maybe change the return
                 //  type from Bool to LisfOf Strings so we can get the reasons why it was not OK
-                if (gameRoomViewModel.checkValidUsername(username)) {
-                    navController.navigate(route = Screen.GameMode.withArgs(username))
-                }
+                gameRoomViewModel.writeNewUser("0", username, "@@@")
+                navController.navigate(route = Screen.GameMode.withArgs(username))
             }
         )
 
@@ -84,14 +83,22 @@ fun GetStartedScreen(
             navController = navController,
             buttonText = "JOIN",
             onClick = {
-                if (gameRoomViewModel.checkValidUsername(username)) {
-                    gameRoomViewModel.joinLobby(username, lobbyKey)
-                    navController.navigate(route = Screen.LobbyGuest.withArgs(lobbyKey, username))
-                }
+                navController.navigate(route = Screen.LobbyGuest.withArgs(lobbyKey, username))
             }
         )
 
         Spacer(modifier = Modifier.height(100.dp))
+
+        OrangeButton(
+            navController = navController,
+            buttonText = "LOBBY",
+            onClick = {
+                // Check for validation. If OK then navigate to next screen
+                // TODO Display the error messages to the user. Idea: Maybe change the return
+                //  type from Bool to LisfOf Strings so we can get the reasons why it was not OK
+                navController.navigate(route = Screen.GameMode.withArgs(username))
+            }
+        )
     }
 
 }
