@@ -36,7 +36,6 @@ fun QuestionScreen(
             Button(
                 onClick = {
                     gameRoomViewModel.submitAnswer(player, navController)
-                    gameRoomViewModel.addToTotal(player)
                     navController.navigate(Screen.Waiting.route)
                 }
             ) {

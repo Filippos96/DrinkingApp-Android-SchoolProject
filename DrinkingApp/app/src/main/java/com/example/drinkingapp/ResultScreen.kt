@@ -51,12 +51,9 @@ fun ResultScreen(
             gameRoomViewModel.popLastPrompt()
             delay(5000)
             // if gameRoomViewModel.prompts is empty: navigate to BIG result screen
-            Log.d("Hej", "There is: " + gameRoomViewModel.prompts.size.toString() + " i result screen")
             if (gameRoomViewModel.prompts.isEmpty()) {
-                Log.d("Hej", "is empty")
                 navController.navigate(Screen.FinalResults.route)
             } else {
-                Log.d("Hej", "is not empty")
                 navController.navigate(Screen.Questions.route)
                 gameRoomViewModel.clearCurrentAnswers()
             }

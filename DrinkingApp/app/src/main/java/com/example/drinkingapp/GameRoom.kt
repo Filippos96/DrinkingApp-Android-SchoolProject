@@ -150,7 +150,9 @@ class GameRoomViewModel() : ViewModel() {
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         })
+        val currentAnswersRef = database.child("lobbies").child(_lobbyKey.value).child("currentAnswers")
         addPromptsEventListener(navController, promptsRef)
+        addCurrentAnswersEventListener(navController, currentAnswersRef)
         navController.navigate(Screen.Waiting.route)
     }
 
@@ -181,48 +183,64 @@ class GameRoomViewModel() : ViewModel() {
     }
 
     fun submitAnswer(player: String, navController: NavController) {
-        val addAnswersRef = database.child("lobbies").child(_lobbyKey.value).child("currentAnswers")
+        addToTotal(player)
 
-        addAnswersRef.addListenerForSingleValueEvent(object : ValueEventListener {
+        val currentAnswersRef = database.child("lobbies").child(_lobbyKey.value).child("currentAnswers")
+
+        currentAnswersRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // Get the current list of prompts
                 val answers = dataSnapshot.getValue<List<String>>()
                 if(answers == null) {
-                    // Create a new list of answers if the current list is null
                     val newAnswers = mutableListOf(player)
-                    // Update the list of prompts in the database
-                    addAnswersRef.setValue(newAnswers)
+                    currentAnswersRef.setValue(newAnswers)
                 } else {
-                    // Add the new prompt to the list
                     val newAnswers = answers.toMutableList()
                     newAnswers.add(player)
-                    // Update the list of prompts in the database
-                    addAnswersRef.setValue(newAnswers)
+                    currentAnswersRef.setValue(newAnswers)
                 }
-
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         })
-        addCurrentAnswersEventListener(navController, addAnswersRef)
+    }
+
+    private fun addToTotal(player: String) {
+        val allAnswers = database.child("lobbies").child(_lobbyKey.value).child("allAnswers")
+
+        allAnswers.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val answers = dataSnapshot.getValue<List<String>>()
+                if (answers == null) {
+                    val newAnswers = mutableListOf(player)
+                    allAnswers.setValue(newAnswers)
+                } else {
+                    val newAnswers = answers.toMutableList()
+                    newAnswers.add(player)
+                    allAnswers.setValue(newAnswers)
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {}
+        })
     }
 
     private fun addCurrentAnswersEventListener(navController: NavController, currentAnswersRef: DatabaseReference) {
         val currentAnswersListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val currentAnswers = dataSnapshot.getValue<List<String>>()
+                val forCurrentAnswers = dataSnapshot.getValue<List<String>>()
 
-                currentAnswers?.let {
-                    if ( currentAnswers.size == _lobby.value.players.size ) {
+                forCurrentAnswers?.let {
+                    if ( forCurrentAnswers.size == _lobby.value.players.size ) {
+                        _currentAnswers.clear()
 
                         CoroutineScope(Dispatchers.Main).launch {
                             delay(3000)
-                            _currentAnswers.clear()
-                            _currentAnswers.addAll(currentAnswers)
-                            _allAnswers.addAll(currentAnswers)
+                            _currentAnswers.addAll(forCurrentAnswers)
+                            _allAnswers.addAll(forCurrentAnswers)
+                            currentAnswersRef.removeValue()
                             Log.d("Hej", _allAnswers.size.toString())
                             navController.navigate(Screen.Result.route)
                         }
-                        if (2.0.pow(_lobby.value.players.size) == _allAnswers.size.toDouble()) {
+                        if (2.0.pow(_lobby.value.players.size).toInt() == _allAnswers.size + _lobby.value.players.size) {
                             currentAnswersRef.removeEventListener(this)
                         }
                     }
@@ -236,31 +254,6 @@ class GameRoomViewModel() : ViewModel() {
             }
         }
         currentAnswersRef.addValueEventListener(currentAnswersListener)
-    }
-
-    fun addToTotal(player: String) {
-        val allAnswers = database.child("lobbies").child(_lobbyKey.value).child("allAnswers")
-
-        allAnswers.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // Get the current list of prompts
-                val answers = dataSnapshot.getValue<List<String>>()
-                if (answers == null) {
-                    // Create a new list of answers if the current list is null
-                    val newAnswers = mutableListOf(player)
-                    // Update the list of prompts in the database
-                    allAnswers.setValue(newAnswers)
-                } else {
-                    // Add the new prompt to the list
-                    val newAnswers = answers.toMutableList()
-                    newAnswers.add(player)
-                    // Update the list of prompts in the database
-                    allAnswers.setValue(newAnswers)
-                }
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {}
-        })
     }
 
     fun clearCurrentAnswers() {

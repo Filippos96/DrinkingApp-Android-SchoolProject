@@ -42,20 +42,6 @@ fun GameModeSelectionScreen(
                 )
             ),
             onClick = {
-
-                navController.navigate(Screen.LobbyHost.withArgs(username))
-            }
-        )
-        GradientButton(
-            text = "Who´s most likely?",
-            textColor = Color.White,
-            gradient = Brush.horizontalGradient(
-                colors = listOf(
-                    greenButtonColor2,
-                    greenButtonColor1
-                )
-            ),
-            onClick = {
                 gameRoomViewModel.createNewLobby(username, navController)
                 navController.navigate(Screen.LobbyHost.route)
             }
