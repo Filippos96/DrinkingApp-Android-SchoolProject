@@ -15,14 +15,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.compose.foundation.layout.Column
-import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
 fun LobbyHostScreen(
     navController: NavController,
-    gameRoomViewModel: GameRoomViewModel,
-    lobbyKey: String,
-    username: String
+    gameRoomViewModel: GameRoomViewModel
 ) {
 
     Column(
@@ -32,7 +29,7 @@ fun LobbyHostScreen(
             .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        NavbarTop(screenName = "Lobby", backButton = true, navController = navController)
+        NavbarTop(screenName = "Lobby", backButton = false, navController = navController)
 
         Spacer(modifier = Modifier.height(100.dp))
 
@@ -48,72 +45,6 @@ fun LobbyHostScreen(
         )
 
         Spacer(modifier = Modifier.height(100.dp))
-/*
-        for (post in gameRoomViewModel.posts){
-            Surface(
-                modifier = Modifier
-                    .width(300.dp)
-                    .height(75.dp)
-                    .border(
-                        width = 2.dp,
-                        color = Color.White,
-                        shape = RoundedCornerShape(20.dp)
-                    ),
-                color = Color.Transparent
-
-            ) {
-                Box(
-                    contentAlignment = Alignment.CenterStart
-                ) {
-                    Text(text = post.title,
-                        modifier = Modifier
-                            .padding(start = 50.dp),
-                        fontSize = 20.sp,
-                        color = Color.White
-                    )
-                    Text(text = post.username,
-                        modifier = Modifier
-                            .padding(start = 50.dp),
-                        fontSize = 20.sp,
-                        color = Color.White
-                    )
-
-                }
-            }
-
-            Spacer(modifier = Modifier.height(20.dp))
-        }
-*/
-        /*
-        for (user in gameRoomViewModel.users){
-            Surface(
-                modifier = Modifier
-                    .width(300.dp)
-                    .height(75.dp)
-                    .border(
-                        width = 2.dp,
-                        color = Color.White,
-                        shape = RoundedCornerShape(20.dp)
-                    ),
-                color = Color.Transparent
-
-            ) {
-                Box(
-                    contentAlignment = Alignment.CenterStart
-                ) {
-                    Text(text = user.name,
-                        modifier = Modifier
-                            .padding(start = 50.dp),
-                        fontSize = 20.sp,
-                        color = Color.White
-                    )
-                }
-            }
-
-            Spacer(modifier = Modifier.height(20.dp))
-        }
-
-         */
 
         for (player in gameRoomViewModel.lobby.value.players){
             Surface(
@@ -142,41 +73,28 @@ fun LobbyHostScreen(
 
             Spacer(modifier = Modifier.height(20.dp))
         }
-        /*
-        if( gameRoomViewModel.lobby.value.gameStarted ) {
-            navController.navigate(Screen.GetStarted.route)
-        }
 
-         */
+        Text(text = "Lobby code is: ${gameRoomViewModel.lobbyKey.value}")
+
+        Spacer(modifier = Modifier.height(20.dp))
 
         OrangeButton(
             navController = navController,
             buttonText = "START GAME",
             onClick = {
-                gameRoomViewModel.startGame(lobbyKey)
+                gameRoomViewModel.startGame()
             }
         )
 
-        OrangeButton(
-            navController = navController,
-            buttonText = "LOBBY",
-            onClick = {
-                gameRoomViewModel.joinLobby("TESTNAME", lobbyKey)
-            }
-        )
+        Spacer(modifier = Modifier.height(20.dp))
 
         OrangeButton(
             navController = navController,
-            buttonText = "HAHA",
+            buttonText = "DISBAND GROUP",
             onClick = {
-                gameRoomViewModel.writeNewPosts(userId = "0", username = "Keazz", title = "ludvig@krasse", body = "JAA")
-            }
-        )
-        OrangeButton(
-            navController = navController,
-            buttonText = "USERS",
-            onClick = {
-                gameRoomViewModel.writeNewUser("1", "TJOOO", "/()")
+                gameRoomViewModel.disbandLobby()
+                navController.popBackStack()
+                navController.popBackStack()
             }
         )
     }

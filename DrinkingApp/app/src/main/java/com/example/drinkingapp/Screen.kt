@@ -9,6 +9,7 @@ sealed class Screen(val route: String){
     object Waiting: Screen(route = "WaitingScreen")
     object Questions: Screen(route = "QuestionScreen")
     object Result: Screen(route = "ResultScreen")
+    object FinalResults: Screen(route = "FinalResultScreen")
 
     fun withArgs(vararg args: String): String {
         return buildString {

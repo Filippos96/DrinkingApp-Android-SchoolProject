@@ -3,7 +3,6 @@ package com.example.drinkingapp
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -12,13 +11,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
 @Composable
-fun CreatePrompt(
+fun FinalResultScreen(
     navController: NavController,
     gameRoomViewModel: GameRoomViewModel
 ) {
-
-    var prompt by remember { mutableStateOf("") }
-
+    var votes by remember { mutableStateOf(0) }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -27,24 +24,34 @@ fun CreatePrompt(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        NavbarTop(screenName = "Create Prompt", backButton = false, navController = navController)
+        NavbarTop(screenName = "Final Result", backButton = false, navController = navController)
 
         Spacer(modifier = Modifier.height(140.dp))
 
-        OutlinedTextField(
-            value = prompt,
-            onValueChange = { prompt = it },
-            label = { Text(text = "Prompt") },
-            placeholder = { Text(text = "Enter your prompt") }
-        )
+        Text(text = "Results")
 
         Spacer(modifier = Modifier.height(10.dp))
 
+        // This is logic. Should probably be a function in the viewModel or something.
+        for (player in gameRoomViewModel.lobby.value.players) {
+            for (vote in gameRoomViewModel.allAnswers) {
+                if (vote == player) {
+                    votes += 1
+                }
+            }
+            Text(text = player)
+            Text(text = votes.toString())
+            votes = 0
+        }
+
         OrangeButton(
             navController = navController,
-            buttonText = "SUBMIT",
+            buttonText = "PLAY AGAIN",
             onClick = {
-                gameRoomViewModel.createNewPrompt(prompt, navController)
+                if (gameRoomViewModel.host.value) {
+                    gameRoomViewModel.disbandLobby()
+                }
+                navController.popBackStack(Screen.GetStarted.route, inclusive = false)
             }
         )
 

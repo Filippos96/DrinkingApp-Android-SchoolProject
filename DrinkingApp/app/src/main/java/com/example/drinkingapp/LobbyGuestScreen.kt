@@ -3,8 +3,6 @@ package com.example.drinkingapp
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -12,7 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -21,9 +18,7 @@ import androidx.navigation.NavController
 @Composable
 fun LobbyGuestScreen(
     navController: NavController,
-    gameRoomViewModel: GameRoomViewModel,
-    lobbyKey: String,
-    username: String
+    gameRoomViewModel: GameRoomViewModel
 ) {
     Column(
         modifier = Modifier
@@ -32,7 +27,7 @@ fun LobbyGuestScreen(
             .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        NavbarTop(screenName = "Lobby", backButton = true, navController = navController)
+        NavbarTop(screenName = "Lobby", backButton = false, navController = navController)
 
         Spacer(modifier = Modifier.height(100.dp))
 
@@ -48,6 +43,43 @@ fun LobbyGuestScreen(
         )
 
         Spacer(modifier = Modifier.height(100.dp))
+
+        for (player in gameRoomViewModel.lobby.value.players){
+            Surface(
+                modifier = Modifier
+                    .width(300.dp)
+                    .height(75.dp)
+                    .border(
+                        width = 2.dp,
+                        color = Color.White,
+                        shape = RoundedCornerShape(20.dp)
+                    ),
+                color = Color.Transparent
+
+            ) {
+                Box(
+                    contentAlignment = Alignment.CenterStart
+                ) {
+                    Text(text = player,
+                        modifier = Modifier
+                            .padding(start = 50.dp),
+                        fontSize = 20.sp,
+                        color = Color.White
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(20.dp))
+        }
+
+        OrangeButton(
+            navController = navController,
+            buttonText = "LEAVE",
+            onClick = {
+                gameRoomViewModel.removePlayerFromLobby()
+                navController.popBackStack()
+            }
+        )
 
     }
 }

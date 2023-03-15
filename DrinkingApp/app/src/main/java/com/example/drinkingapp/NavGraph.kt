@@ -11,15 +11,15 @@ import androidx.navigation.navArgument
 fun SetupNavGraph(
     navController: NavHostController,
     gameRoomViewModel: GameRoomViewModel
-){
+) {
 
     NavHost(
         navController = navController,
         startDestination = Screen.GetStarted.route
-    ){
+    ) {
         composable(
             route = Screen.GetStarted.route
-        ){
+        ) {
             GetStartedScreen(navController, gameRoomViewModel)
         }
 
@@ -30,7 +30,79 @@ fun SetupNavGraph(
                     type = NavType.StringType
                 }
             )
-        ){ entry ->
+        ) { entry ->
+            val username = entry.arguments?.getString("username") ?: ""
+            GameModeSelectionScreen(navController, gameRoomViewModel, username)
+        }
+
+        composable(
+            route = Screen.LobbyHost.route,
+        ) {
+            LobbyHostScreen(navController, gameRoomViewModel)
+        }
+
+        composable(
+            route = Screen.LobbyGuest.route,
+        ) {
+            LobbyGuestScreen(navController, gameRoomViewModel)
+        }
+
+        composable(
+            route = Screen.CreatePrompt.route,
+        ) {
+            CreatePrompt(navController, gameRoomViewModel)
+        }
+
+        composable(
+            route = Screen.Waiting.route,
+        ) {
+            WaitingScreen(navController)
+        }
+
+        composable(
+            route = Screen.Questions.route,
+        ) {
+            QuestionScreen(navController, gameRoomViewModel)
+        }
+
+        composable(
+            route = Screen.Result.route,
+        ) {
+            ResultScreen(navController, gameRoomViewModel)
+        }
+
+        composable(
+            route = Screen.FinalResults.route,
+        ) {
+            FinalResultScreen(navController, gameRoomViewModel)
+        }
+    }
+}
+/*
+@Composable
+fun SetupNavGraph(
+    navController: NavHostController,
+    gameRoomViewModel: GameRoomViewModel
+) {
+
+    NavHost(
+        navController = navController,
+        startDestination = Screen.GetStarted.route
+    ) {
+        composable(
+            route = Screen.GetStarted.route
+        ) {
+            GetStartedScreen(navController, gameRoomViewModel)
+        }
+
+        composable(
+            route = Screen.GameMode.route + "/{username}",
+            arguments = listOf(
+                navArgument("username") {
+                    type = NavType.StringType
+                }
+            )
+        ) { entry ->
             val username = entry.arguments?.getString("username") ?: ""
             GameModeSelectionScreen(navController, gameRoomViewModel, username)
         }
@@ -45,7 +117,7 @@ fun SetupNavGraph(
                     type = NavType.StringType
                 }
             )
-        ){ entry ->
+        ) { entry ->
             val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
             val username = entry.arguments?.getString("username") ?: ""
             LobbyHostScreen(navController, gameRoomViewModel, lobbyKey, username)
@@ -74,7 +146,7 @@ fun SetupNavGraph(
                     type = NavType.StringType
                 }
             )
-        ){ entry ->
+        ) { entry ->
             val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
             CreatePrompt(navController, gameRoomViewModel, lobbyKey)
         }
@@ -86,7 +158,7 @@ fun SetupNavGraph(
                     type = NavType.StringType
                 }
             )
-        ){ entry ->
+        ) { entry ->
             val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
             WaitingScreen(navController, gameRoomViewModel, lobbyKey)
         }
@@ -98,7 +170,7 @@ fun SetupNavGraph(
                     type = NavType.StringType
                 }
             )
-        ){ entry ->
+        ) { entry ->
             val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
             QuestionScreen(navController, gameRoomViewModel, lobbyKey)
         }
@@ -110,61 +182,22 @@ fun SetupNavGraph(
                     type = NavType.StringType
                 }
             )
-        ){ entry ->
+        ) { entry ->
             val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
             ResultScreen(navController, gameRoomViewModel, lobbyKey)
         }
 
-
-    }
-    /*
-    NavHost(
-        navController = navController,
-        startDestination = Screen.Home.route
-    ){
         composable(
-            route = Screen.Home.route
-        ){
-            HomeScreen(navController)
-        }
-        composable(
-            route = "CreateScreen"
-        ){
-            CreateScreen(navController)
-        }
-        composable(
-            route = "DetailScreen&userId={userId}",
+            route = Screen.FinalResults.route + "/{lobbyKey}",
             arguments = listOf(
-                navArgument("userId") {
-                    type = NavType.IntType
-                    defaultValue = 0
+                navArgument("lobbyKey") {
+                    type = NavType.StringType
                 }
             )
-        ){ entry ->
-            DetailScreen(navController, entry.arguments?.getInt("userId"))
-        }
-        composable(
-            route = "DeleteScreen&userId={userId}",
-            arguments = listOf(
-                navArgument("userId") {
-                    type = NavType.IntType
-                    defaultValue = 0
-                }
-            )
-        ){ entry ->
-            DeleteScreen(navController, entry.arguments?.getInt("userId"))
-        }
-        composable(
-            route = "UpdateScreen&userId={userId}",
-            arguments = listOf(
-                navArgument("userId") {
-                    type = NavType.IntType
-                    defaultValue = 0
-                }
-            )
-        ){ entry ->
-            UpdateScreen(navController, entry.arguments?.getInt("userId"))
+        ) { entry ->
+            val lobbyKey = entry.arguments?.getString("lobbyKey") ?: ""
+            FinalResultScreen(navController, gameRoomViewModel, lobbyKey)
         }
     }
-     */
 }
+ */

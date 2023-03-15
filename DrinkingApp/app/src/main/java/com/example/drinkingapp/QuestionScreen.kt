@@ -10,20 +10,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 
 @Composable
 fun QuestionScreen(
     navController: NavController,
-    gameRoomViewModel: GameRoomViewModel,
-    lobbyKey: String
+    gameRoomViewModel: GameRoomViewModel
 ) {
-
-
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -32,7 +24,7 @@ fun QuestionScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        NavbarTop(screenName = "Who's Most likely to..", backButton = true, navController = navController)
+        NavbarTop(screenName = "Who's Most likely to..", backButton = false, navController = navController)
 
         Spacer(modifier = Modifier.height(140.dp))
 
@@ -43,16 +35,13 @@ fun QuestionScreen(
         for ( player in gameRoomViewModel.lobby.value.players ) {
             Button(
                 onClick = {
-                    gameRoomViewModel.submitAnswer(player, lobbyKey, navController)
-                    gameRoomViewModel.addToTotal(player, lobbyKey)
-                    navController.navigate(Screen.Waiting.withArgs(lobbyKey))
+                    gameRoomViewModel.submitAnswer(player, navController)
+                    gameRoomViewModel.addToTotal(player)
+                    navController.navigate(Screen.Waiting.route)
                 }
             ) {
                 Text(text = player)
             }
         }
-// We save all prompts in an array. When we click on the button we clear the current one being displayed. Then we can
-        // keep showing index 0 all the time and get updates. save everyones answer in an array.
-        // Maybe two arrays. One for all question answers and one for current question answers
     }
 }

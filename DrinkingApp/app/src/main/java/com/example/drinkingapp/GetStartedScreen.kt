@@ -1,25 +1,16 @@
 package com.example.drinkingapp
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.drinkingapp.R
 
 @Composable
 fun GetStartedScreen(
@@ -72,7 +63,7 @@ fun GetStartedScreen(
                 // Check for validation. If OK then navigate to next screen
                 // TODO Display the error messages to the user. Idea: Maybe change the return
                 //  type from Bool to LisfOf Strings so we can get the reasons why it was not OK
-                gameRoomViewModel.writeNewUser("0", username, "@@@")
+               // gameRoomViewModel.writeNewUser("0", username, "@@@")
                 navController.navigate(route = Screen.GameMode.withArgs(username))
             }
         )
@@ -83,20 +74,8 @@ fun GetStartedScreen(
             navController = navController,
             buttonText = "JOIN",
             onClick = {
-                navController.navigate(route = Screen.LobbyGuest.withArgs(lobbyKey, username))
-            }
-        )
-
-        Spacer(modifier = Modifier.height(100.dp))
-
-        OrangeButton(
-            navController = navController,
-            buttonText = "LOBBY",
-            onClick = {
-                // Check for validation. If OK then navigate to next screen
-                // TODO Display the error messages to the user. Idea: Maybe change the return
-                //  type from Bool to LisfOf Strings so we can get the reasons why it was not OK
-                navController.navigate(route = Screen.GameMode.withArgs(username))
+                gameRoomViewModel.joinLobby(username, lobbyKey, navController)
+                navController.navigate(route = Screen.LobbyGuest.route)
             }
         )
     }
