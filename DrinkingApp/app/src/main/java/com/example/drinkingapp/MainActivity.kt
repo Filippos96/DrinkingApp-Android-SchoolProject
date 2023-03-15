@@ -49,10 +49,12 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
 @Composable
 fun AppStarter() {
 
     lateinit var navController: NavHostController
+
 
     val gameRoomViewModel = GameRoomViewModel()
 

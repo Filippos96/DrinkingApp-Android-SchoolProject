@@ -6,6 +6,7 @@ sealed class Screen(val route: String){
     object GameMode: Screen(route = "GameModeScreen")
     object Lobby: Screen(route = "LobbyHostScreen")
     object CreatePrompt: Screen(route = "CreatePromptScreen")
+    object ResultScreen: Screen(route = "ResultScreen")
 
     fun withArgs(vararg args: String): String {
         return buildString {
