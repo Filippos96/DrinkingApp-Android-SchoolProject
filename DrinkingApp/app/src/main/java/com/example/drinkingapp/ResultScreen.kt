@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import kotlinx.coroutines.delay
 
 var currentRoundLarge = listOf<Votes>(
     Votes("Johan", 7, listOf(Color(0xFFFF0000), Color(0xFFFF5A5A))),
@@ -117,6 +118,17 @@ fun ResultScreen(
             onClick = {
                 navController.navigate(Screen.GetStarted.route)
             })
+    }
+    LaunchedEffect(Unit) {
+        gameRoomViewModel.popLastPrompt()
+        delay(5000)
+        // if gameRoomViewModel.prompts is empty: navigate to BIG result screen
+        if (gameRoomViewModel.prompts.isEmpty()) {
+            navController.navigate(Screen.FinalResults.route)
+        } else {
+            navController.navigate(Screen.Questions.route)
+            gameRoomViewModel.clearCurrentAnswers()
+        }
     }
 }
 
