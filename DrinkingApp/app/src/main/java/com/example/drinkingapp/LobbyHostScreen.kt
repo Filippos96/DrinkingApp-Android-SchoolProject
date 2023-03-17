@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.compose.foundation.layout.Column
+import androidx.compose.ui.graphics.Brush
 
 @Composable
 fun LobbyHostScreen(
@@ -55,12 +56,11 @@ fun LobbyHostScreen(
                         width = 2.dp,
                         color = Color.White,
                         shape = RoundedCornerShape(20.dp)
-                    ),
+                    ).background(brush = Brush.horizontalGradient(colors = gameRoomViewModel.getColorFromPlayer(player.color)), shape = RoundedCornerShape(20.dp)),
                 color = Color.Transparent
-
             ) {
                 Box(
-                    contentAlignment = Alignment.CenterStart
+                    contentAlignment = Alignment.CenterStart,
                 ) {
                     Text(text = player.username,
                         modifier = Modifier

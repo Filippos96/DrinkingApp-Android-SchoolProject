@@ -12,6 +12,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.compose.foundation.layout.Column
+import androidx.compose.ui.graphics.Brush
+import com.example.drinkingapp.ui.theme.colorP0
 
 @Composable
 fun LobbyScreen(
@@ -57,7 +59,8 @@ fun LobbyScreen(
 
             ) {
                 Box(
-                    contentAlignment = Alignment.CenterStart
+                    contentAlignment = Alignment.CenterStart,
+
                 ) {
                     Text(text = player.username,
                         modifier = Modifier
@@ -65,6 +68,7 @@ fun LobbyScreen(
                         fontSize = 20.sp,
                         color = Color.White
                     )
+
                 }
             }
 

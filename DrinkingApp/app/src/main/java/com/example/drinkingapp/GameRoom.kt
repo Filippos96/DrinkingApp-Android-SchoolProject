@@ -6,7 +6,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
-import com.example.drinkingapp.ui.theme.colorP1
+import com.example.drinkingapp.ui.theme.*
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
@@ -66,14 +66,14 @@ class GameRoomViewModel() : ViewModel() {
     val allAnswers: List<String>
         get() = _allAnswers
 
-    
+
 
     fun createNewLobby(username: String, navController: NavController) : String {
         val lobbyKey = generateRandomKey()
         _username.value = username
         _host.value = true
         _lobbyKey.value = lobbyKey
-        val newLobby = Lobby(lobbyKey = lobbyKey, players = listOf(Player(username, "color1")))
+        val newLobby = Lobby(lobbyKey = lobbyKey, players = listOf(Player(username, "color0")))
         lobbiesRef.child(lobbyKey).setValue(newLobby)
         val lobbyReference = database.child("lobbies").child(lobbyKey)
         addLobbyEventListener(navController, lobbyReference)
@@ -121,7 +121,7 @@ class GameRoomViewModel() : ViewModel() {
                 if (lobbyToJoin != null) {
                     _username.value = username
                     _lobbyKey.value = lobbyKey
-                    val updatedPlayers = lobbyToJoin.players.toMutableList().apply { add(Player(username, "color1")) }
+                    val updatedPlayers = lobbyToJoin.players.toMutableList().apply { add(Player(username, "color" + lobbyToJoin.players.size.toString())) }
                     lobbyToJoin.players = updatedPlayers
                     lobbiesRef.child(lobbyToJoin.lobbyKey).setValue(lobbyToJoin)
                 } else {
@@ -338,6 +338,29 @@ class GameRoomViewModel() : ViewModel() {
                 Log.d("TAG", "onCancelled: ${databaseError.toException()}")
             }
         })
+
+    }
+
+    fun getColorFromPlayer(colorName: String): List<Color>{
+        return when (colorName) {
+            "color0" -> colorP0
+            "color1" -> colorP1
+            "color2" -> colorP2
+            "color3" -> colorP3
+            "color4" -> colorP4
+            "color5" -> colorP5
+            "color6" -> colorP6
+            "color7" -> colorP7
+            "color8" -> colorP8
+            "color9" -> colorP9
+            "color10" -> colorP10
+            "color11" -> colorP11
+            "color12" -> colorP12
+            "color13" -> colorP13
+            "color14" -> colorP14
+            else -> listOf(Color(0xFFFFE600), Color(0xFF000000))
+        }
+
     }
 
 }
