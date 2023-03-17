@@ -35,11 +35,11 @@ fun FinalResultScreen(
         // This is logic. Should probably be a function in the viewModel or something.
         for (player in gameRoomViewModel.lobby.value.players) {
             for (vote in gameRoomViewModel.allAnswers) {
-                if (vote == player) {
+                if (vote == player.username) {
                     votes += 1
                 }
             }
-            Text(text = player)
+            Text(text = player.username)
             Text(text = votes.toString())
             votes = 0
         }

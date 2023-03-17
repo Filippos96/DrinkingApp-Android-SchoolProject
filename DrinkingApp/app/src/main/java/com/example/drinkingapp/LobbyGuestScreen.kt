@@ -60,7 +60,7 @@ fun LobbyGuestScreen(
                 Box(
                     contentAlignment = Alignment.CenterStart
                 ) {
-                    Text(text = player,
+                    Text(text = player.username,
                         modifier = Modifier
                             .padding(start = 50.dp),
                         fontSize = 20.sp,

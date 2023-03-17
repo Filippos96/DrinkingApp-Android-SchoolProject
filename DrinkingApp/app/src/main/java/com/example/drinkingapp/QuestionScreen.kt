@@ -35,11 +35,11 @@ fun QuestionScreen(
         for ( player in gameRoomViewModel.lobby.value.players ) {
             Button(
                 onClick = {
-                    gameRoomViewModel.submitAnswer(player, navController)
+                    gameRoomViewModel.submitAnswer(player.username, navController)
                     navController.navigate(Screen.Waiting.route)
                 }
             ) {
-                Text(text = player)
+                Text(text = player.username)
             }
         }
     }

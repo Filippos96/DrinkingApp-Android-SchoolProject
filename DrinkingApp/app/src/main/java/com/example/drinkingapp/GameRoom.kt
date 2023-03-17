@@ -3,6 +3,7 @@ package com.example.drinkingapp
 import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.compose.runtime.*
+import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import com.example.drinkingapp.ui.theme.colorP1
@@ -23,8 +24,12 @@ data class Lobby(
 
 data class Player(
     var username: String,
-    var color: List<androidx.compose.ui.graphics.Color>
-)
+    var color: String
+){
+    constructor() : this("", "Color1")
+}
+
+
 
 class GameRoomViewModel() : ViewModel() {
     private val database = Firebase.database.reference
@@ -61,12 +66,14 @@ class GameRoomViewModel() : ViewModel() {
     val allAnswers: List<String>
         get() = _allAnswers
 
+    
+
     fun createNewLobby(username: String, navController: NavController) : String {
         val lobbyKey = generateRandomKey()
         _username.value = username
         _host.value = true
         _lobbyKey.value = lobbyKey
-        val newLobby = Lobby(lobbyKey = lobbyKey, players = listOf(Player(username, colorP1)))
+        val newLobby = Lobby(lobbyKey = lobbyKey, players = listOf(Player(username, "color1")))
         lobbiesRef.child(lobbyKey).setValue(newLobby)
         val lobbyReference = database.child("lobbies").child(lobbyKey)
         addLobbyEventListener(navController, lobbyReference)
@@ -114,7 +121,7 @@ class GameRoomViewModel() : ViewModel() {
                 if (lobbyToJoin != null) {
                     _username.value = username
                     _lobbyKey.value = lobbyKey
-                    val updatedPlayers = lobbyToJoin.players.toMutableList().apply { add(Player(username, colorP1)) }
+                    val updatedPlayers = lobbyToJoin.players.toMutableList().apply { add(Player(username, "color1")) }
                     lobbyToJoin.players = updatedPlayers
                     lobbiesRef.child(lobbyToJoin.lobbyKey).setValue(lobbyToJoin)
                 } else {
