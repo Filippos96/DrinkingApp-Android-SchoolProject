@@ -5,20 +5,25 @@ import android.util.Log
 import androidx.compose.runtime.*
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
+import com.example.drinkingapp.ui.theme.colorP1
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.*
-import java.lang.Math.pow
 import kotlin.math.pow
 import kotlin.random.Random
 
 data class Lobby(
-    var players: List<String> = emptyList(),
+    var players: List<Player> = emptyList(),
     val lobbyKey: String = "",
     var gameStarted: Boolean = false,
     var prompts: List<String> = emptyList()
+)
+
+data class Player(
+    var username: String,
+    var color: List<androidx.compose.ui.graphics.Color>
 )
 
 class GameRoomViewModel() : ViewModel() {
@@ -28,6 +33,7 @@ class GameRoomViewModel() : ViewModel() {
     private var _username = mutableStateOf("")
     val username: MutableState<String>
         get() = _username
+
 
     private var _lobbyKey = mutableStateOf("")
     val lobbyKey: MutableState<String>
@@ -60,7 +66,7 @@ class GameRoomViewModel() : ViewModel() {
         _username.value = username
         _host.value = true
         _lobbyKey.value = lobbyKey
-        val newLobby = Lobby(lobbyKey = lobbyKey, players = listOf(username))
+        val newLobby = Lobby(lobbyKey = lobbyKey, players = listOf(Player(username, colorP1)))
         lobbiesRef.child(lobbyKey).setValue(newLobby)
         val lobbyReference = database.child("lobbies").child(lobbyKey)
         addLobbyEventListener(navController, lobbyReference)
@@ -108,7 +114,7 @@ class GameRoomViewModel() : ViewModel() {
                 if (lobbyToJoin != null) {
                     _username.value = username
                     _lobbyKey.value = lobbyKey
-                    val updatedPlayers = lobbyToJoin.players.toMutableList().apply { add(username) }
+                    val updatedPlayers = lobbyToJoin.players.toMutableList().apply { add(Player(username, colorP1)) }
                     lobbyToJoin.players = updatedPlayers
                     lobbiesRef.child(lobbyToJoin.lobbyKey).setValue(lobbyToJoin)
                 } else {
