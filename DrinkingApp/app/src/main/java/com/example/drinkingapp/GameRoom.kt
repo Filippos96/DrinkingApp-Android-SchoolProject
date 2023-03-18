@@ -252,9 +252,11 @@ class GameRoomViewModel() : ViewModel() {
                             currentAnswersRef.removeValue()
                             Log.d("Hej", _allAnswers.size.toString())
                             val prompt = prompts.last()
-
-                            navController.navigate(route = Screen.Result.withArgs(prompt))
                             popLastPrompt()
+                            delay(1000)
+                            navController.navigate(route = Screen.Result.withArgs(prompt))
+
+
 
                         }
                         if (2.0.pow(_lobby.value.players.size).toInt() == _allAnswers.size + _lobby.value.players.size) {

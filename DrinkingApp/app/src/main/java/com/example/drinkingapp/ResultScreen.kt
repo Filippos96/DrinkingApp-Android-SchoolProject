@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.drinkingapp.ui.theme.*
 import kotlinx.coroutines.delay
 
 var currentRoundLarge = listOf<Votes>(
@@ -56,8 +57,6 @@ data class Votes(
     var color: List<Color>
 )
 
-
-
 var winnerColor = mutableListOf<Color>(Color.Red, Color.White)
 
 
@@ -67,6 +66,20 @@ fun ResultScreen(
     gameRoomViewModel: GameRoomViewModel,
     prompt: String
 ){
+    var round = mutableListOf<Votes>()
+    var votes by remember { mutableStateOf(0) }
+    for (player in gameRoomViewModel.lobby.value.players) {
+        for (vote in gameRoomViewModel.currentAnswers) {
+            if (vote == player.username) {
+                votes += 1
+            }
+        }
+        
+            round.add(Votes(player.username, votes, gameRoomViewModel.getColorFromPlayer(player.color)))
+
+        votes = 0
+    }
+
     var screenWidth = LocalConfiguration.current.screenWidthDp.dp
     var screenHeight = LocalConfiguration.current.screenHeightDp.dp
 
@@ -89,9 +102,9 @@ fun ResultScreen(
             modifier = Modifier.fillMaxSize()
         ) {
             Text(text = prompt)
-            displayWinner(currentRoundLarge, prompt)
+            displayWinner(round, prompt)
             Row() {
-                scoreBoard(list = currentRoundLarge)
+                scoreBoard(list = round)
             }
         }
     }
@@ -103,7 +116,7 @@ fun ResultScreen(
             .offset(y = -100.dp)
     ) {
         PieChart2(
-            data = getVotes(currentRoundLarge), gradientColors = getColors(currentRoundLarge)
+            data = getVotes(round), gradientColors = getColors(round)
             )
     }
     Row(
@@ -151,6 +164,7 @@ fun getColors(list: List<Votes>) : List<List<Color>>{
         listOfColors.add(item.color)
     return  listOfColors
 }
+
 
 
 
