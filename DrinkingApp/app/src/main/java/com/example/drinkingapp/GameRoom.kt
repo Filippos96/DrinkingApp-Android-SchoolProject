@@ -107,7 +107,7 @@ class GameRoomViewModel() : ViewModel() {
     private fun generateRandomKey() : String {
         val seed = System.currentTimeMillis();
         val R = Random(seed)
-        val uniqueKey = R.nextInt(100000,999999).toString()
+        val uniqueKey = R.nextInt(0,999).toString()
         return uniqueKey
     }
 
@@ -177,7 +177,7 @@ class GameRoomViewModel() : ViewModel() {
                 prompts?.let {
                     if ( prompts.size == _lobby.value.players.size ) {
                         CoroutineScope(Dispatchers.Main).launch {
-                            delay(3000)
+                            delay(1000)
                             _prompts.addAll(prompts)
                             navController.navigate(Screen.Questions.route)
                         }
@@ -246,7 +246,7 @@ class GameRoomViewModel() : ViewModel() {
                         _currentAnswers.clear()
 
                         CoroutineScope(Dispatchers.Main).launch {
-                            delay(3000)
+                            delay(1000)
                             _currentAnswers.addAll(forCurrentAnswers)
                             _allAnswers.addAll(forCurrentAnswers)
                             currentAnswersRef.removeValue()
