@@ -29,6 +29,7 @@ fun SetupNavGraph(
             GetStartedScreen(navController, gameRoomViewModel)
         }
 
+
         composable(
             route = Screen.GameMode.route + "/{username}",
             arguments = listOf(
@@ -40,6 +41,8 @@ fun SetupNavGraph(
             val username = entry.arguments?.getString("username") ?: ""
             GameModeSelectionScreen(navController, gameRoomViewModel, username)
         }
+
+
 
         composable(
             route = Screen.LobbyHost.route,
@@ -72,9 +75,16 @@ fun SetupNavGraph(
         }
 
         composable(
-            route = Screen.Result.route,
-        ) {
-            ResultScreen(navController, gameRoomViewModel)
+            route = Screen.Result.route + "/{prompt}",
+            arguments = listOf(
+                navArgument("prompt"){
+                    type = NavType.StringType
+                }
+            )
+        ) { entry ->
+            val prompt = entry.arguments?.getString("prompt") ?: ""
+            ResultScreen(navController, gameRoomViewModel, prompt)
+
         }
 
         composable(

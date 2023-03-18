@@ -251,7 +251,11 @@ class GameRoomViewModel() : ViewModel() {
                             _allAnswers.addAll(forCurrentAnswers)
                             currentAnswersRef.removeValue()
                             Log.d("Hej", _allAnswers.size.toString())
-                            navController.navigate(Screen.Result.route)
+                            val prompt = prompts.last()
+
+                            navController.navigate(route = Screen.Result.withArgs(prompt))
+                            popLastPrompt()
+
                         }
                         if (2.0.pow(_lobby.value.players.size).toInt() == _allAnswers.size + _lobby.value.players.size) {
                             currentAnswersRef.removeEventListener(this)
@@ -317,6 +321,8 @@ class GameRoomViewModel() : ViewModel() {
             override fun onCancelled(databaseError: DatabaseError) {}
         })
     }
+
+
 
     fun disbandLobby() {
         _host.value = false

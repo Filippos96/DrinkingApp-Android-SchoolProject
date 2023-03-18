@@ -58,14 +58,14 @@ data class Votes(
 
 
 
-var prompt = "to suck a dick!"
 var winnerColor = mutableListOf<Color>(Color.Red, Color.White)
 
 
 @Composable
 fun ResultScreen(
     navController: NavController,
-    gameRoomViewModel: GameRoomViewModel
+    gameRoomViewModel: GameRoomViewModel,
+    prompt: String
 ){
     var screenWidth = LocalConfiguration.current.screenWidthDp.dp
     var screenHeight = LocalConfiguration.current.screenHeightDp.dp
@@ -88,7 +88,8 @@ fun ResultScreen(
         Column(
             modifier = Modifier.fillMaxSize()
         ) {
-            displayWinner(currentRoundLarge)
+            Text(text = prompt)
+            displayWinner(currentRoundLarge, prompt)
             Row() {
                 scoreBoard(list = currentRoundLarge)
             }
@@ -120,7 +121,7 @@ fun ResultScreen(
             })
     }
     LaunchedEffect(Unit) {
-        gameRoomViewModel.popLastPrompt()
+        //gameRoomViewModel.popLastPrompt()
         delay(5000)
         // if gameRoomViewModel.prompts is empty: navigate to BIG result screen
         if (gameRoomViewModel.prompts.isEmpty()) {
@@ -253,7 +254,7 @@ fun PieChart(data: List<Float>, colors: List<Color>) {
 }
 
 @Composable
-fun displayWinner(list: List<Votes>) {
+fun displayWinner(list: List<Votes>, prompt: String) {
     var currentLeader = mutableListOf<Votes>( Votes("none", 0, listOf(Color.Black)))
 
     for (item in list)
