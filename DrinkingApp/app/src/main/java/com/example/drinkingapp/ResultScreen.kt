@@ -99,12 +99,17 @@ fun ResultScreen(
         verticalAlignment = Alignment.Bottom,
         horizontalArrangement = Arrangement.Center
     ) {
-        OrangeButton(
-            navController = navController,
-            buttonText = "Next Question",
-            onClick = {
-                navController.navigate(Screen.GetStarted.route)
-            })
+        LaunchedEffect(Unit) {
+            //gameRoomViewModel.popLastPrompt()
+            delay(5000)
+            // if gameRoomViewModel.prompts is empty: navigate to BIG result screen
+            if (gameRoomViewModel.prompts.isEmpty()) {
+                navController.navigate(Screen.FinalResults.route)
+            } else {
+                navController.navigate(Screen.Questions.route)
+                gameRoomViewModel.clearCurrentAnswers()
+            }
+        }
     }
 }
 
