@@ -349,26 +349,6 @@ class GameRoomViewModel() : ViewModel() {
 
     }
 
-    fun getColorFromPlayer(colorName: String): List<Color>{
-        return when (colorName) {
-            "color0" -> colorP0
-            "color1" -> colorP1
-            "color2" -> colorP2
-            "color3" -> colorP3
-            "color4" -> colorP4
-            "color5" -> colorP5
-            "color6" -> colorP6
-            "color7" -> colorP7
-            "color8" -> colorP8
-            "color9" -> colorP9
-            "color10" -> colorP10
-            "color11" -> colorP11
-            "color12" -> colorP12
-            "color13" -> colorP13
-            "color14" -> colorP14
-            else -> listOf(Color(0xFFFFE600), Color(0xFF000000))
-        }
 
-    }
 
 }

@@ -25,32 +25,6 @@ import androidx.navigation.NavController
 import com.example.drinkingapp.ui.theme.*
 import kotlinx.coroutines.delay
 
-var currentRoundLarge = listOf<Votes>(
-    Votes("Johan", 7, listOf(Color(0xFFFF0000), Color(0xFFFF5A5A))),
-    Votes("Sven", 8,listOf(Color(0xFF008AFF), Color(0xFF00559C))),
-    Votes("Johan", 3,listOf(Color(0xFFFF00AD), Color(0xFFFF82D7))),
-    Votes("Sven", 2,listOf(Color(0xFF00FF22), Color(0xFF7AFF8B))),
-    Votes("Johan", 0,listOf(Color(0xFFFFC800), Color(0xFFFFDF6C))),
-    Votes("Sven", 7,listOf(Color(0xFF0700B1), Color(0xFF9B97FF))),
-    Votes("Johan", 0,listOf(Color(0xFF00FFFF), Color(0xFFAFFFFF))),
-    Votes("Sven", 2,listOf(Color(0xB3747474), Color(0xFFC7C7C7))),
-    Votes("Karin", 1,listOf(Color(0xFF640032), Color(0xFFAA6387))),
-    Votes("Johan", 0,listOf(Color(0xB35A4700), Color(0xFF5A4700))),
-    Votes("Sven", 2,listOf(Color(0xB3FFA200), Color(0xFFFFA200))),
-    Votes("Karin", 1,listOf(Color(0xB3008113), Color(0xFF008113))),
-    Votes("Johan", 0,listOf(Color(0xB3C000A8), Color(0xFFC000A8))),
-    Votes("Sven", 1,listOf(Color(0xB36F0000), Color(0xFFB60000))),
-    Votes("Karin", 1,listOf(Color(0xB3B0FF9A), Color(0xFFB0FF9A)))
-)
-
-
-
-var currentRound = listOf<Votes>(
-    Votes("Johan", 7,listOf(Color(0xFFFF0000), Color(0xFFFF5A5A))),
-    Votes("Sven", 5, listOf(Color(0xFF008AFF), Color(0xFF99D0FF))),
-    Votes("Johan", 3,listOf(Color(0xFFFF00AD), Color(0xFFFF82D7))),
-)
-
 data class Votes(
     var name: String,
     var votes: Int,
@@ -58,7 +32,6 @@ data class Votes(
 )
 
 var winnerColor = mutableListOf<Color>(Color.Red, Color.White)
-
 
 @Composable
 fun ResultScreen(
@@ -75,7 +48,7 @@ fun ResultScreen(
             }
         }
         
-            round.add(Votes(player.username, votes, gameRoomViewModel.getColorFromPlayer(player.color)))
+        round.add(Votes(player.username, votes, getColorFromPlayer(player.color)))
 
         votes = 0
     }
@@ -89,6 +62,7 @@ fun ResultScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .padding(16.dp)
             .background(
                 brush = Brush.linearGradient(
                     colors = winnerColor,
@@ -97,11 +71,10 @@ fun ResultScreen(
                 )
             ),
     ) {
-        NavbarTop(screenName = "Results!", backButton = true, navController = navController)
+        NavbarTop(screenName = "Results!", backButton = false, navController = navController)
         Column(
             modifier = Modifier.fillMaxSize()
         ) {
-            Text(text = prompt)
             displayWinner(round, prompt)
             Row() {
                 scoreBoard(list = round)
@@ -132,17 +105,6 @@ fun ResultScreen(
             onClick = {
                 navController.navigate(Screen.GetStarted.route)
             })
-    }
-    LaunchedEffect(Unit) {
-        //gameRoomViewModel.popLastPrompt()
-        delay(5000)
-        // if gameRoomViewModel.prompts is empty: navigate to BIG result screen
-        if (gameRoomViewModel.prompts.isEmpty()) {
-            navController.navigate(Screen.FinalResults.route)
-        } else {
-            navController.navigate(Screen.Questions.route)
-            gameRoomViewModel.clearCurrentAnswers()
-        }
     }
 }
 
@@ -205,7 +167,7 @@ fun PieChart2(data: List<Float>, gradientColors: List<List<Color>>) {
                     useCenter = true,
                     topLeft = Offset(
                         (screenWidth.toPx() / 3) / 2,
-                        screenHeight.toPx() - (screenWidth.toPx() - screenWidth.toPx() / 3)
+                        screenHeight.toPx() - (screenWidth.toPx() - screenWidth.toPx() / 4.5f)
                     ),
                     size = size,
                     style = Fill,
@@ -217,7 +179,7 @@ fun PieChart2(data: List<Float>, gradientColors: List<List<Color>>) {
                     useCenter = true,
                     topLeft = Offset(
                         (screenWidth.toPx() / 3) / 2,
-                        screenHeight.toPx() - (screenWidth.toPx() - screenWidth.toPx() / 3)
+                        screenHeight.toPx() - (screenWidth.toPx() - screenWidth.toPx() / 4.5f)
                     ),
                     size = size,
                     style = Stroke(2.dp.toPx())
@@ -260,12 +222,7 @@ fun scoreBoard(list: List<Votes>){
     }
 }
 
-@Composable
-fun PieChart(data: List<Float>, colors: List<Color>) {
-    val total = data.sum()
-    var startAngle = -90f
 
-}
 
 @Composable
 fun displayWinner(list: List<Votes>, prompt: String) {
@@ -284,8 +241,9 @@ fun displayWinner(list: List<Votes>, prompt: String) {
     ) {
         if (currentLeader.size == 1)
             Text(text = currentLeader[0].name,
-                fontSize = 35.sp,
-                color = Color.White
+                fontSize = 60.sp,
+                color = Color.White,
+                modifier = Modifier.padding(horizontal = 75.dp, vertical = 10.dp)
             )
         else {
             var combinedWinnerText = ""
@@ -299,7 +257,8 @@ fun displayWinner(list: List<Votes>, prompt: String) {
             Text(
                 text = combinedWinnerText,
                 fontSize = 35.sp,
-                color = Color.White
+                color = Color.White,
+                modifier = Modifier.padding(horizontal = 75.dp, vertical = 10.dp)
             )
         }
 
@@ -307,7 +266,7 @@ fun displayWinner(list: List<Votes>, prompt: String) {
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 75.dp, vertical = 0.dp)
+                .padding(horizontal = 75.dp, vertical = 30.dp)
         ) {
             Text(text = "With " + currentLeader[0].votes.toString() + " votes is most likely " + prompt,
                 fontSize = 20.sp,
@@ -317,6 +276,26 @@ fun displayWinner(list: List<Votes>, prompt: String) {
         winnerColor = currentLeader[0].color as MutableList<Color>
 
     }
-
 }
 
+fun getColorFromPlayer(colorName: String): List<Color>{
+    return when (colorName) {
+        "color0" -> colorP0
+        "color1" -> colorP1
+        "color2" -> colorP2
+        "color3" -> colorP3
+        "color4" -> colorP4
+        "color5" -> colorP5
+        "color6" -> colorP6
+        "color7" -> colorP7
+        "color8" -> colorP8
+        "color9" -> colorP9
+        "color10" -> colorP10
+        "color11" -> colorP11
+        "color12" -> colorP12
+        "color13" -> colorP13
+        "color14" -> colorP14
+        else -> listOf(Color(0xFFFFE600), Color(0xFF000000))
+    }
+
+}

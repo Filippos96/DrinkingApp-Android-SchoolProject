@@ -55,7 +55,7 @@ fun LobbyScreen(
                         color = Color.White,
                         shape = RoundedCornerShape(20.dp)
                     )
-                    .background(brush = Brush.horizontalGradient(colors = gameRoomViewModel.getColorFromPlayer(player.color)), shape = RoundedCornerShape(20.dp)),
+                    .background(brush = Brush.horizontalGradient(colors = getColorFromPlayer(player.color)), shape = RoundedCornerShape(20.dp)),
                 color = Color.Transparent
 
             ) {
@@ -108,7 +108,5 @@ fun LobbyScreen(
                 }
             )
         }
-
-
     }
 }
