@@ -59,18 +59,27 @@ fun ResultScreen(
 
 
     // A surface container using the 'background' color from the theme
+
+    Column(modifier = Modifier
+        .fillMaxSize()
+        .background(
+            brush = Brush.linearGradient(
+                colors = winnerColor,
+                start = Offset.Zero,
+                end = Offset.Infinite
+            )
+        ),) {
+        Column(modifier = Modifier.fillMaxSize().background(Color(0x4A000000))) {
+
+        }
+    }
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
-            .background(
-                brush = Brush.linearGradient(
-                    colors = winnerColor,
-                    start = Offset.Zero,
-                    end = Offset.Infinite
-                )
-            ),
+
     ) {
+
         NavbarTop(screenName = "Results!", backButton = false, navController = navController)
         Column(
             modifier = Modifier.fillMaxSize()
