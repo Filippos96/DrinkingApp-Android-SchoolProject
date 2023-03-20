@@ -12,6 +12,8 @@ sealed class Screen(val route: String){
     object StartScreen: Screen(route = "StartScreen")
     object FinalResults: Screen(route = "FinalResultScreen")
 
+    object VotingScreen: Screen(route = "VotingScreen")
+
     fun withArgs(vararg args: String): String {
         return buildString {
             append(route)

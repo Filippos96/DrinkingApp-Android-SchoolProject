@@ -15,7 +15,7 @@ fun SetupNavGraph(
 
     NavHost(
         navController = navController,
-        startDestination = Screen.StartScreen.route
+        startDestination = Screen.VotingScreen.route
     ) {
         composable(
             route = Screen.StartScreen.route
@@ -72,6 +72,12 @@ fun SetupNavGraph(
             route = Screen.Questions.route,
         ) {
             QuestionScreen(navController, gameRoomViewModel)
+        }
+
+        composable(
+            route = Screen.VotingScreen.route
+        ) {
+            VotingScreen(navController, gameRoomViewModel)
         }
 
         composable(
