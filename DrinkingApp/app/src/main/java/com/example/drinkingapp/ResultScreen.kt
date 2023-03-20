@@ -282,7 +282,7 @@ fun displayWinner(list: List<Votes>, prompt: String) {
                 .fillMaxWidth()
                 .padding(horizontal = 75.dp, vertical = 30.dp)
         ) {
-            Text(text = "With " + currentLeader[0].votes.toString() + " votes is most likely " + prompt,
+            Text(text = "With " + currentLeader[0].votes.toString() + " votes is most likely to" + prompt,
                 fontSize = 20.sp,
                 color = Color.White,
                 textAlign = TextAlign.Center)
