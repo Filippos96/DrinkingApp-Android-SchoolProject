@@ -179,7 +179,7 @@ class GameRoomViewModel() : ViewModel() {
                         CoroutineScope(Dispatchers.Main).launch {
                             delay(1000)
                             _prompts.addAll(prompts)
-                            navController.navigate(Screen.Questions.route)
+                            navController.navigate(Screen.VotingScreen.route)
                         }
                         promptsReference.removeEventListener(this)
                     }
