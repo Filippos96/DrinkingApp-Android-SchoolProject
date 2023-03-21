@@ -123,7 +123,7 @@ fun VotingScreen(
         NavbarTop(screenName = "Vote!", backButton = false, navController = navController)
         Spacer(modifier = Modifier.height(screenHeight/20))
         Text(
-            text = "Who's most likely to",
+            text = "Who's most likely to ",
             fontSize = 30.sp,
             color = Color.White,
             textAlign = TextAlign.Center,

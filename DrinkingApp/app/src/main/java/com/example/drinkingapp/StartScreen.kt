@@ -56,7 +56,7 @@ fun StartScreen(
         Spacer(modifier = Modifier.height(177.dp))
 
         Image(
-            painter = painterResource(id = R.drawable.getstarted),
+            painter = painterResource(id = R.drawable.beer),
             contentDescription = "beer",
             modifier = Modifier.size(160.dp)
         )
