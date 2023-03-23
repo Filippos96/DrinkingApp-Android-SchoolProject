@@ -1,0 +1,94 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.drinkingapp-mergeDebugResources-53:/values-ja/values-ja.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\bima20dz\\.gradle\\caches\\transforms-3\\f3e1e65d7d4aa682d784590066561b0d\\transformed\\core-1.8.0\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "34",
+                        "startColumns": "4",
+                        "startOffsets": "3160",
+                        "endColumns": "100",
+                        "endOffsets": "3256"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\bima20dz\\.gradle\\caches\\transforms-3\\6973e07a6ae8e54e7c693a73bbc74cd0\\transformed\\zxing-android-embedded-4.2.0\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,109,156,256",
+                        "endColumns": "53,46,99,81",
+                        "endOffsets": "104,151,251,333"
+                    },
+                    "to": {
+                        "startLines": "37,38,39,40",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3443,3497,3544,3644",
+                        "endColumns": "53,46,99,81",
+                        "endOffsets": "3492,3539,3639,3721"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\bima20dz\\.gradle\\caches\\transforms-3\\7dd9afdd673b827811aa65571508f223\\transformed\\ui-1.3.3\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,191,269,358,455,538,616,694,779,854,918,982,1056,1132,1201,1266",
+                        "endColumns": "85,77,88,96,82,77,77,84,74,63,63,73,75,68,64,116",
+                        "endOffsets": "186,264,353,450,533,611,689,774,849,913,977,1051,1127,1196,1261,1378"
+                    },
+                    "to": {
+                        "startLines": "2,3,22,23,24,25,26,27,28,29,30,31,32,33,35,36",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,191,2228,2317,2414,2497,2575,2653,2738,2813,2877,2941,3015,3091,3261,3326",
+                        "endColumns": "85,77,88,96,82,77,77,84,74,63,63,73,75,68,64,116",
+                        "endOffsets": "186,264,2312,2409,2492,2570,2648,2733,2808,2872,2936,3010,3086,3155,3321,3438"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\bima20dz\\.gradle\\caches\\transforms-3\\37891b7f593eebab446a9063ca59fb42\\transformed\\play-services-base-18.0.1\\res\\values-ja\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "193,293,423,539,641,769,885,986,1081,1211,1308,1437,1552,1668,1784,1840,1895",
+                        "endColumns": "99,129,115,101,127,115,100,94,129,96,128,114,115,115,55,54,66",
+                        "endOffsets": "292,422,538,640,768,884,985,1080,1210,1307,1436,1551,1667,1783,1839,1894,1961"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "269,373,507,627,733,865,985,1090,1311,1445,1546,1679,1798,1918,2038,2098,2157",
+                        "endColumns": "103,133,119,105,131,119,104,98,133,100,132,118,119,119,59,58,70",
+                        "endOffsets": "368,502,622,728,860,980,1085,1184,1440,1541,1674,1793,1913,2033,2093,2152,2223"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\bima20dz\\.gradle\\caches\\transforms-3\\731234668381f94d0ca2f0205877f02b\\transformed\\play-services-basement-18.1.0\\res\\values-ja\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "117",
+                        "endOffsets": "312"
+                    },
+                    "to": {
+                        "startLines": "12",
+                        "startColumns": "4",
+                        "startOffsets": "1189",
+                        "endColumns": "121",
+                        "endOffsets": "1306"
+                    }
+                }
+            ]
+        }
+    ]
+}

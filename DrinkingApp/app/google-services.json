@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "314739401609",
+    "firebase_url": "https://drinkingapp-e13dc-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "drinkingapp-e13dc",
+    "storage_bucket": "drinkingapp-e13dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314739401609:android:676059001b00a969ab7758",
+        "android_client_info": {
+          "package_name": "com.example.drinkingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314739401609-assn7dujmc1t7f8475hov2m4vsib8o68.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSD_VfOSz0OSIMfSEUIbXnCFzioeL_PH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314739401609-assn7dujmc1t7f8475hov2m4vsib8o68.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
