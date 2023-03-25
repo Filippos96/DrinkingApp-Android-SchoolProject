@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Drickande App</string>
+    <string name="create">SKAPA</string>
+    <string name="drink_responsibly">Var vänlig och drick ansvarsfullt!</string>
+    <string name="enter_the_lobby_code">Ange lobbykoden</string>
+    <string name="enter_your_username">Ange ditt användarnamn</string>
+    <string name="get_started">Kom igång!</string>
+    <string name="invalid_lobby_key_error">Icke existerande lobbynyckel!</string>
+    <string name="join">GÅ MED</string>
+    <string name="lobby_code">Lobbykod</string>
+    <string name="ok">OK</string>
+    <string name="responsibility_warning">Om du fortsätter godkänner du att du (och endast du) är ansvarig för eventuella konsekvenser som kan uppstå från att spela detta spel!</string>
+    <string name="scan_qr_code">Skanna QR-kod</string>
+    <string name="start">STARTA</string>
+    <string name="username">Användarnamn</string>
+    <string name="username_length_error">Användarnamn är för kort!</string>
+    <string name="welcome_message">Välkommen till Drinking Game!</string>
+</resources>

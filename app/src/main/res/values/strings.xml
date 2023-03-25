@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Drinking App</string>
+    <string name="get_started">Get Started!</string>
+    <string name="username">Username</string>
+    <string name="enter_your_username">Enter your username</string>
+    <string name="lobby_code">Lobby Code</string>
+    <string name="enter_the_lobby_code">Enter the Lobby Code</string>
+    <string name="create">CREATE</string>
+    <string name="join">JOIN</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="drink_responsibly">Please drink responsibly!</string>
+    <string name="responsibility_warning">If you continue you agree that you (and only you) are responsible for any consequences that may result from playing this game!</string>
+    <string name="ok">OK</string>
+    <string name="start">START</string>
+    <string name="welcome_message">Welcome To Drinking Game!</string>
+    <string name="invalid_lobby_key_error">Invalid lobbykey!</string>
+    <string name="username_length_error">Username is to short!</string>
+</resources>
