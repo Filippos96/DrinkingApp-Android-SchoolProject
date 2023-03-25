@@ -184,9 +184,9 @@
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",
-                        "startOffsets": "56",
+                        "startOffsets": "59",
                         "endColumns": "88",
-                        "endOffsets": "140"
+                        "endOffsets": "143"
                     },
                     "to": {
                         "startLines": "179",
