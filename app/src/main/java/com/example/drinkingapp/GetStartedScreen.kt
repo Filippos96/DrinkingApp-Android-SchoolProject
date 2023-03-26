@@ -59,7 +59,7 @@ fun GetStartedScreen(
             }, onSuccess = { isValid ->
                 if (isValid) {
                     gameRoomViewModel.joinLobbyAndNavigate(username, scannedLobbyKey, navController)
-                    navController.navigate(route = Screen.LobbyScreen.route)
+                    navController.navigate(route = Screen.LobbyHost.route)
                 }
             })
         }
