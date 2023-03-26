@@ -8,12 +8,20 @@
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">Drinking App</string>
+    <string name="bump_slow_players">Bump slow players</string>
+    <string name="close">CLOSE</string>
     <string name="create">CREATE</string>
+    <string name="create_prompt">Create prompt</string>
     <string name="default_web_client_id" translatable="false">314739401609-assn7dujmc1t7f8475hov2m4vsib8o68.apps.googleusercontent.com</string>
+    <string name="disband_group">DISBAND GROUP</string>
     <string name="drink_responsibly">Please drink responsibly!</string>
     <string name="enter_the_lobby_code">Enter the Lobby Code</string>
+    <string name="enter_your_prompt">Enter your prompt</string>
     <string name="enter_your_username">Enter your username</string>
+    <string name="final_results">Final Results!</string>
     <string name="firebase_database_url" translatable="false">https://drinkingapp-e13dc-default-rtdb.europe-west1.firebasedatabase.app</string>
+    <string name="for_more_players_to_join">for more players to join</string>
+    <string name="game_mode">Game Mode</string>
     <string name="gcm_defaultSenderId" translatable="false">314739401609</string>
     <string name="get_started">Get Started!</string>
     <string name="google_api_key" translatable="false">AIzaSyDSD_VfOSz0OSIMfSEUIbXnCFzioeL_PH0</string>
@@ -22,14 +30,33 @@
     <string name="google_storage_bucket" translatable="false">drinkingapp-e13dc.appspot.com</string>
     <string name="invalid_lobby_key_error">Invalid lobbykey!</string>
     <string name="join">JOIN</string>
+    <string name="leave">LEAVE</string>
+    <string name="lobby">Lobby</string>
     <string name="lobby_code">Lobby Code</string>
+    <string name="lobby_code_is">Lobby code is:</string>
+    <string name="music_quiz">Music quiz</string>
     <string name="ok">OK</string>
+    <string name="play_again">PLAY AGAIN</string>
+    <string name="please_select_game_mode">Please select game mode...</string>
     <string name="project_id" translatable="false">drinkingapp-e13dc</string>
+    <string name="prompt">Prompt</string>
+    <string name="prompt_length_error">Prompt must be between 4 and 100 characters</string>
     <string name="responsibility_warning">If you continue you agree that you (and only you) are responsible for any consequences that may result from playing this game!</string>
+    <string name="results">Results!</string>
     <string name="scan_qr_code">Scan QR Code</string>
     <string name="start">START</string>
+    <string name="start_game">START GAME</string>
+    <string name="submit">SUBMIT</string>
+    <string name="the_most_likely_person_to_do_anything_is">The most likely person to do anything is...</string>
     <string name="username">Username</string>
     <string name="username_length_error">Username is to short!</string>
+    <string name="vote">Vote!</string>
+    <string name="votes_is_most_likely_to">votes is most likely to</string>
+    <string name="waiting">Waiting</string>
     <string name="welcome_message">Welcome To Drinking Game!</string>
+    <string name="whos_most_likely">Who´s most likely?</string>
+    <string name="whos_most_likely_to">"Who's most likely to "</string>
+    <string name="with">With</string>
+    <string name="would_you_rather">Would you rather?</string>
     <style name="Theme.DrinkingApp" parent="android:Theme.Material.Light.NoActionBar"/>
 </resources>

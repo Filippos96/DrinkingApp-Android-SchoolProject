@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.drawscope.DrawStyle
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -72,7 +73,7 @@ fun FinalResultScreen(
 
     ) {
 
-        NavbarTop(screenName = "Final Results!", backButton = false, navController = navController)
+        NavbarTop(screenName = stringResource(R.string.final_results), backButton = false, navController = navController)
         Column(
             modifier = Modifier.fillMaxSize()
         ) {
@@ -102,7 +103,7 @@ fun FinalResultScreen(
     ) {
         OrangeButton(
             navController = navController,
-            buttonText = "PLAY AGAIN",
+            buttonText = stringResource(R.string.play_again),
             onClick = {
                 if (gameRoomViewModel.host.value) {
                     gameRoomViewModel.disbandLobby()
@@ -136,7 +137,7 @@ fun displayFinalWinner(list: List<Votes>) {
                 .fillMaxWidth()
                 .padding(horizontal = 75.dp, vertical = 30.dp)
         ) {
-            Text(text = "The most likely person to do anything is... ",
+            Text(text = stringResource(R.string.the_most_likely_person_to_do_anything_is),
                 fontSize = 20.sp,
                 color = Color.White,
                 textAlign = TextAlign.Center)

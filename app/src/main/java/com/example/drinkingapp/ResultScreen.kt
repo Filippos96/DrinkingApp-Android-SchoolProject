@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.drawscope.DrawStyle
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -80,7 +81,7 @@ fun ResultScreen(
 
     ) {
 
-        NavbarTop(screenName = "Results!", backButton = false, navController = navController)
+        NavbarTop(screenName = stringResource(R.string.results), backButton = false, navController = navController)
         Column(
             modifier = Modifier.fillMaxSize()
         ) {
@@ -282,7 +283,7 @@ fun displayWinner(list: List<Votes>, prompt: String) {
                 .fillMaxWidth()
                 .padding(horizontal = 75.dp, vertical = 30.dp)
         ) {
-            Text(text = "With " + currentLeader[0].votes.toString() + " votes is most likely to" + prompt,
+            Text(text = stringResource(R.string.with) + currentLeader[0].votes.toString() + " " + stringResource(R.string.votes_is_most_likely_to) + prompt,
                 fontSize = 20.sp,
                 color = Color.White,
                 textAlign = TextAlign.Center)

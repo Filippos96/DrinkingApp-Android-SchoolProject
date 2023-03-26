@@ -141,6 +141,8 @@
     <string name="androidx_startup" translatable="false">androidx.startup</string>
     <string name="app_name">Drinking App</string>
     <string name="app_version" translatable="false">null</string>
+    <string name="bump_slow_players">Bump slow players</string>
+    <string name="close">CLOSE</string>
     <string name="close_drawer">"Close navigation menu"</string>
     <string name="close_sheet">"Close sheet"</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
@@ -162,15 +164,21 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="create">CREATE</string>
+    <string name="create_prompt">Create prompt</string>
     <string name="default_error_message">"Invalid input"</string>
     <string name="default_popup_window_title" ns2:ignore="ExtraTranslation">"Pop-Up Window"</string>
     <string name="default_web_client_id" translatable="false">314739401609-assn7dujmc1t7f8475hov2m4vsib8o68.apps.googleusercontent.com</string>
     <string name="define_zxingandroidembedded" translatable="false"/>
+    <string name="disband_group">DISBAND GROUP</string>
     <string name="drink_responsibly">Please drink responsibly!</string>
     <string name="dropdown_menu">"Dropdown menu"</string>
     <string name="enter_the_lobby_code">Enter the Lobby Code</string>
+    <string name="enter_your_prompt">Enter your prompt</string>
     <string name="enter_your_username">Enter your username</string>
+    <string name="final_results">Final Results!</string>
     <string name="firebase_database_url" translatable="false">https://drinkingapp-e13dc-default-rtdb.europe-west1.firebasedatabase.app</string>
+    <string name="for_more_players_to_join">for more players to join</string>
+    <string name="game_mode">Game Mode</string>
     <string name="gcm_defaultSenderId" translatable="false">314739401609</string>
     <string name="get_started">Get Started!</string>
     <string name="google_api_key" translatable="false">AIzaSyDSD_VfOSz0OSIMfSEUIbXnCFzioeL_PH0</string>
@@ -181,6 +189,7 @@
     <string name="indeterminate">Partially checked</string>
     <string name="invalid_lobby_key_error">Invalid lobbykey!</string>
     <string name="join">JOIN</string>
+    <string name="leave">LEAVE</string>
     <string name="library_zxingandroidembedded_author" translatable="false">JourneyApps</string>
     <string name="library_zxingandroidembedded_authorWebsite" translatable="false">https://journeyapps.com/</string>
     <string name="library_zxingandroidembedded_isOpenSource" translatable="false">true</string>
@@ -190,25 +199,43 @@
     <string name="library_zxingandroidembedded_libraryWebsite" translatable="false">https://github.com/journeyapps/zxing-android-embedded</string>
     <string name="library_zxingandroidembedded_licenseId" translatable="false">apache_2_0</string>
     <string name="library_zxingandroidembedded_repositoryLink" translatable="false">https://github.com/journeyapps/zxing-android-embedded</string>
+    <string name="lobby">Lobby</string>
     <string name="lobby_code">Lobby Code</string>
+    <string name="lobby_code_is">Lobby code is:</string>
+    <string name="music_quiz">Music quiz</string>
     <string name="navigation_menu">"Navigation menu"</string>
     <string name="not_selected">Not selected</string>
     <string name="off">Off</string>
     <string name="ok">OK</string>
     <string name="on">On</string>
+    <string name="play_again">PLAY AGAIN</string>
+    <string name="please_select_game_mode">Please select game mode...</string>
     <string name="project_id" translatable="false">drinkingapp-e13dc</string>
+    <string name="prompt">Prompt</string>
+    <string name="prompt_length_error">Prompt must be between 4 and 100 characters</string>
     <string name="range_end">"Range end"</string>
     <string name="range_start">"Range start"</string>
     <string name="responsibility_warning">If you continue you agree that you (and only you) are responsible for any consequences that may result from playing this game!</string>
+    <string name="results">Results!</string>
     <string name="scan_qr_code">Scan QR Code</string>
     <string name="selected">Selected</string>
     <string name="start">START</string>
+    <string name="start_game">START GAME</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="submit">SUBMIT</string>
     <string name="tab">Tab</string>
     <string name="template_percent"><ns1:g id="percentage">%1$d</ns1:g> percent.</string>
+    <string name="the_most_likely_person_to_do_anything_is">The most likely person to do anything is...</string>
     <string name="username">Username</string>
     <string name="username_length_error">Username is to short!</string>
+    <string name="vote">Vote!</string>
+    <string name="votes_is_most_likely_to">votes is most likely to</string>
+    <string name="waiting">Waiting</string>
     <string name="welcome_message">Welcome To Drinking Game!</string>
+    <string name="whos_most_likely">Who´s most likely?</string>
+    <string name="whos_most_likely_to">"Who's most likely to "</string>
+    <string name="with">With</string>
+    <string name="would_you_rather">Would you rather?</string>
     <string name="zxing_app_name">Barcode Scanner</string>
     <string name="zxing_button_ok">OK</string>
     <string name="zxing_msg_camera_framework_bug">Sorry, the Android camera encountered a problem. You may need to restart the device.</string>
@@ -287,76 +314,70 @@
 
         
         <attr name="layout_anchorGravity">
-            <!-- Push object to the top of its container, not changing its size. -->
+            
             <flag name="top" value="0x30"/>
-            <!-- Push object to the bottom of its container, not changing its size. -->
+            
             <flag name="bottom" value="0x50"/>
-            <!-- Push object to the left of its container, not changing its size. -->
+            
             <flag name="left" value="0x03"/>
-            <!-- Push object to the right of its container, not changing its size. -->
+            
             <flag name="right" value="0x05"/>
-            <!-- Place object in the vertical center of its container, not changing its size. -->
+            
             <flag name="center_vertical" value="0x10"/>
-            <!-- Grow the vertical size of the object if needed so it completely fills its container. -->
+            
             <flag name="fill_vertical" value="0x70"/>
-            <!-- Place object in the horizontal center of its container, not changing its size. -->
+            
             <flag name="center_horizontal" value="0x01"/>
-            <!-- Grow the horizontal size of the object if needed so it completely fills its container. -->
+            
             <flag name="fill_horizontal" value="0x07"/>
-            <!-- Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. -->
+            
             <flag name="center" value="0x11"/>
-            <!-- Grow the horizontal and vertical size of the object if needed so it completely fills its container. -->
+            
             <flag name="fill" value="0x77"/>
-            <!-- Additional option that can be set to have the top and/or bottom edges of
-                 the child clipped to its container's bounds.
-                 The clip will be based on the vertical gravity: a top gravity will clip the bottom
-                 edge, a bottom gravity will clip the top edge, and neither will clip both edges. -->
+            
             <flag name="clip_vertical" value="0x80"/>
-            <!-- Additional option that can be set to have the left and/or right edges of
-                 the child clipped to its container's bounds.
-                 The clip will be based on the horizontal gravity: a left gravity will clip the right
-                 edge, a right gravity will clip the left edge, and neither will clip both edges. -->
+            
             <flag name="clip_horizontal" value="0x08"/>
-            <!-- Push object to the beginning of its container, not changing its size. -->
+            
             <flag name="start" value="0x00800003"/>
-            <!-- Push object to the end of its container, not changing its size. -->
+            
             <flag name="end" value="0x00800005"/>
         </attr>
 
         
         <attr format="enum" name="layout_insetEdge">
-            <!-- Don't inset. -->
+            
             <enum name="none" value="0x0"/>
-            <!-- Inset the top edge. -->
+            
             <enum name="top" value="0x30"/>
-            <!-- Inset the bottom edge. -->
+            
             <enum name="bottom" value="0x50"/>
-            <!-- Inset the left edge. -->
+            
             <enum name="left" value="0x03"/>
-            <!-- Inset the right edge. -->
+            
             <enum name="right" value="0x05"/>
-            <!-- Inset the start edge. -->
+            
             <enum name="start" value="0x00800003"/>
-            <!-- Inset the end edge. -->
+            
             <enum name="end" value="0x00800005"/>
         </attr>
         
         <attr name="layout_dodgeInsetEdges">
-            <!-- Don't dodge any edges -->
+            
             <flag name="none" value="0x0"/>
-            <!-- Dodge the top inset edge. -->
+            
             <flag name="top" value="0x30"/>
-            <!-- Dodge the bottom inset edge. -->
+            
             <flag name="bottom" value="0x50"/>
-            <!-- Dodge the left inset edge. -->
+            
             <flag name="left" value="0x03"/>
-            <!-- Dodge the right inset edge. -->
+            
             <flag name="right" value="0x05"/>
-            <!-- Dodge the start inset edge. -->
+            
             <flag name="start" value="0x00800003"/>
-            <!-- Dodge the end inset edge. -->
+            
             <flag name="end" value="0x00800005"/>
-            <!-- Dodge all the inset edges. -->
+            
             <flag name="all" value="0x77"/>
         </attr>
     </declare-styleable>
@@ -371,23 +392,14 @@
         <attr format="reference" name="fontProviderCerts"/>
         
         <attr name="fontProviderFetchStrategy">
-            <!-- The blocking font fetch works as follows.
-              First, check the local cache, then if the requested font is not cached, request the
-              font from the provider and wait until it is finished.  You can change the length of
-              the timeout by modifying fontProviderFetchTimeout.  If the timeout happens, the
-              default typeface will be used instead. -->
+            
             <enum name="blocking" value="0"/>
-            <!-- The async font fetch works as follows.
-              First, check the local cache, then if the requeted font is not cached, trigger a
-              request the font and continue with layout inflation. Once the font fetch succeeds, the
-              target text view will be refreshed with the downloaded font data. The
-              fontProviderFetchTimeout will be ignored if async loading is specified. -->
+            
             <enum name="async" value="1"/>
         </attr>
         
         <attr format="integer" name="fontProviderFetchTimeout">
-            <!-- A special value for the timeout. In this case, the blocking font fetching will not
-              timeout and wait until a reply is received from the font provider. -->
+            
             <enum name="forever" value="-1"/>
         </attr>
         

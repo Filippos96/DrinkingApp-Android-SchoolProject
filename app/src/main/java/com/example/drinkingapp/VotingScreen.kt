@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.drawscope.DrawStyle
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -102,7 +103,6 @@ var testLobby100 = listOf(
     Player("Amanda", "color11"),
     Player("Amanda", "color11"))
 
-var testPrompt = "To have a sex?"
 
 @Composable
 fun VotingScreen(
@@ -120,10 +120,10 @@ fun VotingScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        NavbarTop(screenName = "Vote!", backButton = false, navController = navController)
+        NavbarTop(screenName = stringResource(R.string.vote), backButton = false, navController = navController)
         Spacer(modifier = Modifier.height(screenHeight/20))
         Text(
-            text = "Who's most likely to",
+            text = stringResource(R.string.whos_most_likely_to),
             fontSize = 30.sp,
             color = Color.White,
             textAlign = TextAlign.Center,

@@ -15,4 +15,35 @@
     <string name="welcome_message">Welcome To Drinking Game!</string>
     <string name="invalid_lobby_key_error">Invalid lobbykey!</string>
     <string name="username_length_error">Username is to short!</string>
+
+
+    <string name="whos_most_likely">Who´s most likely?</string>
+    <string name="game_mode">Game Mode</string>
+    <string name="would_you_rather">Would you rather?</string>
+    <string name="music_quiz">Music quiz</string>
+    <string name="please_select_game_mode">Please select game mode...</string>
+    <string name="lobby">Lobby</string>
+    <string name="waiting">Waiting</string>
+    <string name="for_more_players_to_join">for more players to join</string>
+    <string name="lobby_code_is">Lobby code is:</string>
+    <string name="start_game">START GAME</string>
+    <string name="disband_group">DISBAND GROUP</string>
+    <string name="leave">LEAVE</string>
+    <string name="close">CLOSE</string>
+    <string name="bump_slow_players">Bump slow players</string>
+    <string name="prompt_length_error">Prompt must be between 4 and 100 characters</string>
+    <string name="create_prompt">Create prompt</string>
+    <string name="whos_most_likely_to">"Who's most likely to "</string>
+    <string name="prompt">Prompt</string>
+    <string name="enter_your_prompt">Enter your prompt</string>
+    <string name="submit">SUBMIT</string>
+    <string name="vote">Vote!</string>
+    <string name="results">Results!</string>
+    <string name="with">With</string>
+    <string name="votes_is_most_likely_to">votes is most likely to</string>
+    <string name="final_results">Final Results!</string>
+    <string name="play_again">PLAY AGAIN</string>
+    <string name="the_most_likely_person_to_do_anything_is">The most likely person to do anything is...</string>
+
+
 </resources>

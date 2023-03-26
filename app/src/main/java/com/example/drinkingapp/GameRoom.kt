@@ -161,10 +161,7 @@ class GameRoomViewModel() : ViewModel() {
     }
 
     private fun generateRandomKey() : String {
-        val seed = System.currentTimeMillis();
-        val R = Random(seed)
-        val uniqueKey = R.nextInt(0,999).toString()
-        return uniqueKey
+        return Random(System.currentTimeMillis()).nextInt(100000,999999).toString()
     }
 
     fun joinLobby(username: String, lobbyKey: String, navController: NavController) {

@@ -16,4 +16,36 @@
     <string name="welcome_message">Välkommen till Drinking Game!</string>
     <string name="invalid_lobby_key_error">Icke existerande lobbynyckel!</string>
     <string name="username_length_error">Användarnamn är för kort!</string>
+
+
+    <string name="whos_most_likely">Vem är mest trolig?</string>
+    <string name="game_mode">Välj Spel</string>
+    <string name="would_you_rather">Vill du helst?</string>
+    <string name="music_quiz">Musik quiz</string>
+    <string name="please_select_game_mode">Välj spel</string>
+    <string name="lobby">Lobby</string>
+    <string name="waiting">Väntar</string>
+    <string name="for_more_players_to_join">på fler spelare</string>
+    <string name="lobby_code_is">"Lobbykoden är: "</string>
+    <string name="start_game">STARTA SPELET</string>
+    <string name="disband_group">UPPLÖS GRUPPEN</string>
+    <string name="leave">LÄMNA</string>
+    <string name="close">STÄNG</string>
+    <string name="bump_slow_players">Peta slöa spelare</string>
+    <string name="prompt_length_error">Pompten måste vara mellan 4 och 100 bokstäver</string>
+    <string name="create_prompt">Skapa prompt</string>
+    <string name="whos_most_likely_to">"Vem är mest trolig att "</string>
+    <string name="prompt">Prompt</string>
+    <string name="enter_your_prompt">Skriv din prompt</string>
+    <string name="submit">SKICKA IN</string>
+    <string name="vote">Rösta!</string>
+    <string name="results">Resultat!</string>
+    <string name="with">"Med "</string>
+    <string name="votes_is_most_likely_to">"Röster är mest trolig att "</string>
+    <string name="final_results">Slutresultat!</string>
+    <string name="play_again">SPELA IGEN</string>
+    <string name="the_most_likely_person_to_do_anything_is">"Den mest toliga personen att göra vad som helst är... "</string>
+
+
 </resources>
+

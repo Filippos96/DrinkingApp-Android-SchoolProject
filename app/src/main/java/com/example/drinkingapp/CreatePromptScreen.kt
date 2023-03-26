@@ -11,6 +11,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
@@ -22,12 +23,13 @@ fun CreatePrompt(
 
     var prompt by remember { mutableStateOf("") }
     var errors by remember { mutableStateOf(listOf<String>()) }
-
+    var error = stringResource(R.string.prompt_length_error)
     fun validatePrompt(): Boolean {
         val newErrors = mutableListOf<String>()
 
         if (prompt.length !in 4..100) {
-            newErrors.add("Prompt must be between 4 and 100 characters.")
+
+            newErrors.add(error)
         }
 
         errors = newErrors
@@ -42,7 +44,7 @@ fun CreatePrompt(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        NavbarTop(screenName = "Create Prompt", backButton = false, navController = navController)
+        NavbarTop(screenName = stringResource(R.string.create_prompt), backButton = false, navController = navController)
 
         Spacer(modifier = Modifier.height(70.dp))
 
@@ -54,13 +56,13 @@ fun CreatePrompt(
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Text(text = "Who's most likely to:")
+        Text(text = stringResource(R.string.whos_most_likely_to))
 
         OutlinedTextField(
             value = prompt,
             onValueChange = { prompt = it },
-            label = { Text(text = "Prompt") },
-            placeholder = { Text(text = "Enter your prompt") }
+            label = { Text(text = stringResource(R.string.prompt)) },
+            placeholder = { Text(text = stringResource(R.string.enter_your_prompt)) }
         )
 
         Spacer(modifier = Modifier.height(10.dp))
@@ -73,7 +75,7 @@ fun CreatePrompt(
 
         OrangeButton(
             navController = navController,
-            buttonText = "SUBMIT",
+            buttonText = stringResource(R.string.submit),
             onClick = {
                 if (validatePrompt()) {
                     gameRoomViewModel.createNewPrompt(prompt, navController)

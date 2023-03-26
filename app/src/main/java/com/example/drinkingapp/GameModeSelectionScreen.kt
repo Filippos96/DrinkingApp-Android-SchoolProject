@@ -9,6 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.drinkingapp.ui.theme.*
@@ -28,12 +29,12 @@ fun GameModeSelectionScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        NavbarTop(screenName = "Game Mode", backButton = true, navController = navController)
+        NavbarTop(screenName = stringResource(R.string.game_mode), backButton = true, navController = navController)
 
         Spacer(modifier = Modifier.height(140.dp))
 
         GradientButton(
-            text = "Who´s most likely?",
+            text = stringResource(R.string.whos_most_likely),
             textColor = Color.White,
             gradient = Brush.horizontalGradient(
                 colors = listOf(
@@ -51,7 +52,7 @@ fun GameModeSelectionScreen(
         Spacer(modifier = Modifier.height(20.dp))
 
         GradientButton(
-            text = "Would you rather?",
+            text = stringResource(R.string.would_you_rather),
             textColor = Color.White,
             gradient = Brush.horizontalGradient(
                 colors = listOf(
@@ -66,7 +67,7 @@ fun GameModeSelectionScreen(
         Spacer(modifier = Modifier.height(20.dp))
 
         GradientButton(
-            text = "Music quiz!",
+            text = stringResource(R.string.music_quiz),
             textColor = Color.White,
             gradient = Brush.horizontalGradient(
                 colors = listOf(
@@ -80,7 +81,7 @@ fun GameModeSelectionScreen(
 
         Spacer(modifier = Modifier.height(160.dp))
 
-        Text(text = "Please select a game mode...")
+        Text(text = stringResource(R.string.please_select_game_mode))
 
 
     }

@@ -25,6 +25,7 @@ import androidx.activity.result.ActivityResultCaller
 import androidx.activity.result.ActivityResultRegistry
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.ui.graphics.Color
 
 @Composable
 fun GetStartedScreen(
@@ -58,7 +59,7 @@ fun GetStartedScreen(
             }, onSuccess = { isValid ->
                 if (isValid) {
                     gameRoomViewModel.joinLobbyAndNavigate(username, scannedLobbyKey, navController)
-                    navController.navigate(route = Screen.LobbyGuest.route)
+                    navController.navigate(route = Screen.LobbyScreen.route)
                 }
             })
         }
@@ -98,15 +99,18 @@ fun GetStartedScreen(
             placeholder = { Text(text = stringResource(id = R.string.enter_the_lobby_code)) }
         )
 
-        Spacer(modifier = Modifier.height(10.dp))
+        //Spacer(modifier = Modifier.height(10.dp))
 
         errors.forEach { error ->
             Text(text = error, color = MaterialTheme.colorScheme.error)
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         Button(
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color(0xFFFFA500), // set the background color of the button to bright orange
+                contentColor = Color.White), // set the text color to white
             onClick = {
                 if (validUsername(context)) {
                     val integrator = IntentIntegrator(context as Activity)
@@ -118,8 +122,10 @@ fun GetStartedScreen(
                 }
             }
         ) {
-            Text(text = "Scan QR Code")
+            Text(text = stringResource(R.string.scan_qr_code) )
+
         }
+        Spacer(modifier = Modifier.height(10.dp))
 
         OrangeButton(
             navController = navController,

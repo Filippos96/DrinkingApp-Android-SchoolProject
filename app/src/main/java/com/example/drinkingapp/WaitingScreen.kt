@@ -7,8 +7,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.capitalize
+import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import java.util.*
 
 @Composable
 fun WaitingScreen(
@@ -23,17 +27,17 @@ fun WaitingScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        NavbarTop(screenName = "Waiting", backButton = false, navController = navController)
+        NavbarTop(screenName = stringResource(R.string.waiting), backButton = false, navController = navController)
 
         Spacer(modifier = Modifier.height(140.dp))
 
-        Text(text = "WAITING")
+        Text(text = stringResource(R.string.waiting).uppercase(Locale.getDefault()))
 
         Spacer(modifier = Modifier.height(10.dp))
 
         OrangeButton(
             navController = navController,
-            buttonText = "Bump slow players",
+            buttonText = stringResource(R.string.bump_slow_players),
             onClick = {
 
             }

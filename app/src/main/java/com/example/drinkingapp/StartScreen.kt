@@ -127,7 +127,8 @@ fun StartScreen(
                                 ),
                                 modifier = Modifier.width(100.dp)
                             ) {
-                                Text(text = "OK")
+                                Text(stringResource(R.string.ok), color = Color.White)
+
                             }
                         }
                     }

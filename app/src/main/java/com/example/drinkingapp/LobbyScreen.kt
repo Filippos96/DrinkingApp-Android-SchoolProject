@@ -46,18 +46,18 @@ fun LobbyScreen(
             .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        NavbarTop(screenName = "LobbyL", backButton = false, navController = navController)
+        NavbarTop(screenName = stringResource(R.string.lobby), backButton = false, navController = navController)
 
 
         Spacer(modifier = Modifier.height(100.dp))
 
         Text(
-            text = "Waiting...",
+            text = stringResource(R.string.waiting),
             fontSize = 50.sp,
             color = Color.White
         )
         Text(
-            text = "for more players to join",
+            text = stringResource(R.string.for_more_players_to_join),
             fontSize = 20.sp,
             color = Color.White
         )
@@ -98,7 +98,7 @@ fun LobbyScreen(
             Spacer(modifier = Modifier.height(20.dp))
         }
 
-        Text(text = "Lobby code is: ${gameRoomViewModel.lobbyKey.value}")
+        Text(text = stringResource(R.string.lobby_code_is) + "${gameRoomViewModel.lobbyKey.value}")
 
 
 
@@ -108,7 +108,7 @@ fun LobbyScreen(
         if (gameRoomViewModel.host.value) {
             OrangeButton(
                 navController = navController,
-                buttonText = "START GAME",
+                buttonText = stringResource(R.string.start_game),
                 onClick = {
                     gameRoomViewModel.startGame()
                 }
@@ -116,7 +116,7 @@ fun LobbyScreen(
             Spacer(modifier = Modifier.height(20.dp))
             OrangeButton(
                 navController = navController,
-                buttonText = "DISBAND GROUP",
+                buttonText = stringResource(R.string.disband_group),
                 onClick = {
                     gameRoomViewModel.disbandLobby()
                     navController.popBackStack()
@@ -126,7 +126,7 @@ fun LobbyScreen(
         } else {
             OrangeButton(
                 navController = navController,
-                buttonText = "LEAVE",
+                buttonText = stringResource(R.string.leave),
                 onClick = {
                     gameRoomViewModel.removePlayerFromLobby()
                     navController.popBackStack()
@@ -218,7 +218,7 @@ fun LobbyScreen(
                     .width(100.dp)
                     .align(Alignment.BottomCenter)
             ) {
-                Text(text = "OK")
+                Text(text = stringResource(R.string.close))
             }
         }
     }
