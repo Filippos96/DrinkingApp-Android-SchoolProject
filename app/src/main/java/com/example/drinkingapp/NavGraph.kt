@@ -44,17 +44,6 @@ fun SetupNavGraph(
 
 
 
-        composable(
-            route = Screen.LobbyHost.route,
-        ) {
-            LobbyHostScreen(navController, gameRoomViewModel)
-        }
-
-        composable(
-            route = Screen.LobbyGuest.route,
-        ) {
-            LobbyGuestScreen(navController, gameRoomViewModel)
-        }
 
         composable(
             route = Screen.LobbyScreen.route,
@@ -74,11 +63,7 @@ fun SetupNavGraph(
             WaitingScreen(navController)
         }
 
-        composable(
-            route = Screen.Questions.route,
-        ) {
-            QuestionScreen(navController, gameRoomViewModel)
-        }
+
 
         composable(
             route = Screen.VotingScreen.route
