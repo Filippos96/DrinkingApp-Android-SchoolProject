@@ -116,7 +116,7 @@ fun ResultScreen(
             if (gameRoomViewModel.prompts.isEmpty()) {
                 navController.navigate(Screen.FinalResults.route)
             } else {
-                navController.navigate(Screen.VotingScreen.route)
+                navController.navigate(Screen.Questions.route)
                 gameRoomViewModel.clearCurrentAnswers()
             }
         }

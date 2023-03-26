@@ -78,163 +78,162 @@
 44-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:11:9-54
 45        android:supportsRtl="true"
 45-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:12:9-35
-46        android:testOnly="true"
-47        android:theme="@style/Theme.DrinkingApp" >
-47-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:13:9-49
-48        <activity
-48-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:15:9-29:20
-49            android:name="com.example.drinkingapp.MainActivity"
-49-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:16:13-41
-50            android:exported="true"
-50-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:17:13-36
-51            android:label="@string/app_name"
-51-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:18:13-45
-52            android:theme="@style/Theme.DrinkingApp" >
-52-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:19:13-53
-53            <intent-filter>
-53-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:20:13-24:29
-54                <action android:name="android.intent.action.MAIN" />
-54-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:21:17-69
-54-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:21:25-66
-55
-56                <category android:name="android.intent.category.LAUNCHER" />
-56-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:23:17-77
-56-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:23:27-74
-57            </intent-filter>
-58
-59            <meta-data
-59-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:26:13-28:36
-60                android:name="android.app.lib_name"
-60-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:27:17-52
-61                android:value="" />
-61-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:28:17-33
-62        </activity>
-63        <activity
-63-->[androidx.compose.ui:ui-tooling:1.3.3] C:\Users\spela\.gradle\caches\transforms-3\baf416d0e838865247eb94ff35c66606\transformed\ui-tooling-1.3.3\AndroidManifest.xml:23:9-25:39
-64            android:name="androidx.compose.ui.tooling.PreviewActivity"
-64-->[androidx.compose.ui:ui-tooling:1.3.3] C:\Users\spela\.gradle\caches\transforms-3\baf416d0e838865247eb94ff35c66606\transformed\ui-tooling-1.3.3\AndroidManifest.xml:24:13-71
-65            android:exported="true" />
-65-->[androidx.compose.ui:ui-tooling:1.3.3] C:\Users\spela\.gradle\caches\transforms-3\baf416d0e838865247eb94ff35c66606\transformed\ui-tooling-1.3.3\AndroidManifest.xml:25:13-36
-66
-67        <service
-67-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\b629d89645003523056c1354e230215c\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:11:9-17:19
-68            android:name="com.google.firebase.components.ComponentDiscoveryService"
-68-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\b629d89645003523056c1354e230215c\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:12:13-84
-69            android:directBootAware="true"
-69-->[com.google.firebase:firebase-common:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\b01d0a4518fcf1117dcaa779845df24b\transformed\firebase-common-20.3.0\AndroidManifest.xml:34:13-43
-70            android:exported="false" >
-70-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\b629d89645003523056c1354e230215c\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:13:13-37
-71            <meta-data
-71-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\b629d89645003523056c1354e230215c\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:14:13-16:85
-72                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
-72-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\b629d89645003523056c1354e230215c\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:15:17-124
-73                android:value="com.google.firebase.components.ComponentRegistrar" />
-73-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\b629d89645003523056c1354e230215c\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:16:17-82
-74            <meta-data
-74-->[com.google.firebase:firebase-common-ktx:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\5b6321da37097567862def2962eef42f\transformed\firebase-common-ktx-20.3.0\AndroidManifest.xml:14:13-16:85
-75                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-75-->[com.google.firebase:firebase-common-ktx:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\5b6321da37097567862def2962eef42f\transformed\firebase-common-ktx-20.3.0\AndroidManifest.xml:15:17-113
-76                android:value="com.google.firebase.components.ComponentRegistrar" />
-76-->[com.google.firebase:firebase-common-ktx:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\5b6321da37097567862def2962eef42f\transformed\firebase-common-ktx-20.3.0\AndroidManifest.xml:16:17-82
-77            <meta-data
-77-->[com.google.firebase:firebase-database:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\4fc0bbd80152219a7987921e87331197\transformed\firebase-database-20.1.0\AndroidManifest.xml:31:13-33:85
-78                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-78-->[com.google.firebase:firebase-database:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\4fc0bbd80152219a7987921e87331197\transformed\firebase-database-20.1.0\AndroidManifest.xml:32:17-109
-79                android:value="com.google.firebase.components.ComponentRegistrar" />
-79-->[com.google.firebase:firebase-database:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\4fc0bbd80152219a7987921e87331197\transformed\firebase-database-20.1.0\AndroidManifest.xml:33:17-82
-80        </service>
-81
-82        <activity
-82-->[androidx.compose.ui:ui-test-manifest:1.3.3] C:\Users\spela\.gradle\caches\transforms-3\3e3e4f8f48d62b3fd217317f229d4c4b\transformed\ui-test-manifest-1.3.3\AndroidManifest.xml:23:9-25:39
-83            android:name="androidx.activity.ComponentActivity"
-83-->[androidx.compose.ui:ui-test-manifest:1.3.3] C:\Users\spela\.gradle\caches\transforms-3\3e3e4f8f48d62b3fd217317f229d4c4b\transformed\ui-test-manifest-1.3.3\AndroidManifest.xml:24:13-63
-84            android:exported="true" />
-84-->[androidx.compose.ui:ui-test-manifest:1.3.3] C:\Users\spela\.gradle\caches\transforms-3\3e3e4f8f48d62b3fd217317f229d4c4b\transformed\ui-test-manifest-1.3.3\AndroidManifest.xml:25:13-36
-85        <activity
-85-->[com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\spela\.gradle\caches\transforms-3\6973e07a6ae8e54e7c693a73bbc74cd0\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:47:9-53:63
-86            android:name="com.journeyapps.barcodescanner.CaptureActivity"
-86-->[com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\spela\.gradle\caches\transforms-3\6973e07a6ae8e54e7c693a73bbc74cd0\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:48:13-74
-87            android:clearTaskOnLaunch="true"
-87-->[com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\spela\.gradle\caches\transforms-3\6973e07a6ae8e54e7c693a73bbc74cd0\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:49:13-45
-88            android:screenOrientation="sensorLandscape"
-88-->[com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\spela\.gradle\caches\transforms-3\6973e07a6ae8e54e7c693a73bbc74cd0\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:50:13-56
-89            android:stateNotNeeded="true"
-89-->[com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\spela\.gradle\caches\transforms-3\6973e07a6ae8e54e7c693a73bbc74cd0\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:51:13-42
-90            android:theme="@style/zxing_CaptureTheme"
-90-->[com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\spela\.gradle\caches\transforms-3\6973e07a6ae8e54e7c693a73bbc74cd0\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:52:13-54
-91            android:windowSoftInputMode="stateAlwaysHidden" />
-91-->[com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\spela\.gradle\caches\transforms-3\6973e07a6ae8e54e7c693a73bbc74cd0\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:53:13-60
-92
-93        <provider
-93-->[com.google.firebase:firebase-common:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\b01d0a4518fcf1117dcaa779845df24b\transformed\firebase-common-20.3.0\AndroidManifest.xml:25:9-30:39
-94            android:name="com.google.firebase.provider.FirebaseInitProvider"
-94-->[com.google.firebase:firebase-common:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\b01d0a4518fcf1117dcaa779845df24b\transformed\firebase-common-20.3.0\AndroidManifest.xml:26:13-77
-95            android:authorities="com.example.drinkingapp.firebaseinitprovider"
-95-->[com.google.firebase:firebase-common:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\b01d0a4518fcf1117dcaa779845df24b\transformed\firebase-common-20.3.0\AndroidManifest.xml:27:13-72
-96            android:directBootAware="true"
-96-->[com.google.firebase:firebase-common:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\b01d0a4518fcf1117dcaa779845df24b\transformed\firebase-common-20.3.0\AndroidManifest.xml:28:13-43
-97            android:exported="false"
-97-->[com.google.firebase:firebase-common:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\b01d0a4518fcf1117dcaa779845df24b\transformed\firebase-common-20.3.0\AndroidManifest.xml:29:13-37
-98            android:initOrder="100" />
-98-->[com.google.firebase:firebase-common:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\b01d0a4518fcf1117dcaa779845df24b\transformed\firebase-common-20.3.0\AndroidManifest.xml:30:13-36
-99
-100        <activity
-100-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\spela\.gradle\caches\transforms-3\37891b7f593eebab446a9063ca59fb42\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-101            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-101-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\spela\.gradle\caches\transforms-3\37891b7f593eebab446a9063ca59fb42\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-102            android:exported="false"
-102-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\spela\.gradle\caches\transforms-3\37891b7f593eebab446a9063ca59fb42\transformed\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-103            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-103-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\spela\.gradle\caches\transforms-3\37891b7f593eebab446a9063ca59fb42\transformed\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
-104
-105        <meta-data
-105-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\spela\.gradle\caches\transforms-3\731234668381f94d0ca2f0205877f02b\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
-106            android:name="com.google.android.gms.version"
-106-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\spela\.gradle\caches\transforms-3\731234668381f94d0ca2f0205877f02b\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
-107            android:value="@integer/google_play_services_version" />
-107-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\spela\.gradle\caches\transforms-3\731234668381f94d0ca2f0205877f02b\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
-108
-109        <provider
-109-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:25:9-33:20
-110            android:name="androidx.startup.InitializationProvider"
-110-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:26:13-67
-111            android:authorities="com.example.drinkingapp.androidx-startup"
-111-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:27:13-68
-112            android:exported="false" >
-112-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:28:13-37
-113            <meta-data
-113-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:30:13-32:52
-114                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-114-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:31:17-85
-115                android:value="androidx.startup" />
-115-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:32:17-49
-116        </provider>
-117
-118        <receiver
-118-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:35:9-47:20
-119            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-119-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:36:13-76
-120            android:directBootAware="false"
-120-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:37:13-44
-121            android:enabled="true"
-121-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:38:13-35
-122            android:exported="true"
-122-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:39:13-36
-123            android:permission="android.permission.DUMP" >
-123-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:40:13-57
-124            <intent-filter>
-124-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:41:13-43:29
-125                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-125-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:42:17-91
-125-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:42:25-88
-126            </intent-filter>
-127            <intent-filter>
-127-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:44:13-46:29
-128                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-128-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:45:17-85
-128-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:45:25-82
-129            </intent-filter>
-130        </receiver>
-131    </application>
-132
-133</manifest>
+46        android:theme="@style/Theme.DrinkingApp" >
+46-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:13:9-49
+47        <activity
+47-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:15:9-29:20
+48            android:name="com.example.drinkingapp.MainActivity"
+48-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:16:13-41
+49            android:exported="true"
+49-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:17:13-36
+50            android:label="@string/app_name"
+50-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:18:13-45
+51            android:theme="@style/Theme.DrinkingApp" >
+51-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:19:13-53
+52            <intent-filter>
+52-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:20:13-24:29
+53                <action android:name="android.intent.action.MAIN" />
+53-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:21:17-69
+53-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:21:25-66
+54
+55                <category android:name="android.intent.category.LAUNCHER" />
+55-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:23:17-77
+55-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:23:27-74
+56            </intent-filter>
+57
+58            <meta-data
+58-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:26:13-28:36
+59                android:name="android.app.lib_name"
+59-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:27:17-52
+60                android:value="" />
+60-->C:\Users\spela\Documents\GitHub\DrinkingApp\app\src\main\AndroidManifest.xml:28:17-33
+61        </activity>
+62        <activity
+62-->[androidx.compose.ui:ui-tooling:1.3.3] C:\Users\spela\.gradle\caches\transforms-3\baf416d0e838865247eb94ff35c66606\transformed\ui-tooling-1.3.3\AndroidManifest.xml:23:9-25:39
+63            android:name="androidx.compose.ui.tooling.PreviewActivity"
+63-->[androidx.compose.ui:ui-tooling:1.3.3] C:\Users\spela\.gradle\caches\transforms-3\baf416d0e838865247eb94ff35c66606\transformed\ui-tooling-1.3.3\AndroidManifest.xml:24:13-71
+64            android:exported="true" />
+64-->[androidx.compose.ui:ui-tooling:1.3.3] C:\Users\spela\.gradle\caches\transforms-3\baf416d0e838865247eb94ff35c66606\transformed\ui-tooling-1.3.3\AndroidManifest.xml:25:13-36
+65
+66        <service
+66-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\b629d89645003523056c1354e230215c\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:11:9-17:19
+67            android:name="com.google.firebase.components.ComponentDiscoveryService"
+67-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\b629d89645003523056c1354e230215c\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:12:13-84
+68            android:directBootAware="true"
+68-->[com.google.firebase:firebase-common:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\b01d0a4518fcf1117dcaa779845df24b\transformed\firebase-common-20.3.0\AndroidManifest.xml:34:13-43
+69            android:exported="false" >
+69-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\b629d89645003523056c1354e230215c\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:13:13-37
+70            <meta-data
+70-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\b629d89645003523056c1354e230215c\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:14:13-16:85
+71                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
+71-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\b629d89645003523056c1354e230215c\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:15:17-124
+72                android:value="com.google.firebase.components.ComponentRegistrar" />
+72-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\b629d89645003523056c1354e230215c\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:16:17-82
+73            <meta-data
+73-->[com.google.firebase:firebase-common-ktx:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\5b6321da37097567862def2962eef42f\transformed\firebase-common-ktx-20.3.0\AndroidManifest.xml:14:13-16:85
+74                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+74-->[com.google.firebase:firebase-common-ktx:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\5b6321da37097567862def2962eef42f\transformed\firebase-common-ktx-20.3.0\AndroidManifest.xml:15:17-113
+75                android:value="com.google.firebase.components.ComponentRegistrar" />
+75-->[com.google.firebase:firebase-common-ktx:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\5b6321da37097567862def2962eef42f\transformed\firebase-common-ktx-20.3.0\AndroidManifest.xml:16:17-82
+76            <meta-data
+76-->[com.google.firebase:firebase-database:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\4fc0bbd80152219a7987921e87331197\transformed\firebase-database-20.1.0\AndroidManifest.xml:31:13-33:85
+77                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+77-->[com.google.firebase:firebase-database:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\4fc0bbd80152219a7987921e87331197\transformed\firebase-database-20.1.0\AndroidManifest.xml:32:17-109
+78                android:value="com.google.firebase.components.ComponentRegistrar" />
+78-->[com.google.firebase:firebase-database:20.1.0] C:\Users\spela\.gradle\caches\transforms-3\4fc0bbd80152219a7987921e87331197\transformed\firebase-database-20.1.0\AndroidManifest.xml:33:17-82
+79        </service>
+80
+81        <activity
+81-->[androidx.compose.ui:ui-test-manifest:1.3.3] C:\Users\spela\.gradle\caches\transforms-3\3e3e4f8f48d62b3fd217317f229d4c4b\transformed\ui-test-manifest-1.3.3\AndroidManifest.xml:23:9-25:39
+82            android:name="androidx.activity.ComponentActivity"
+82-->[androidx.compose.ui:ui-test-manifest:1.3.3] C:\Users\spela\.gradle\caches\transforms-3\3e3e4f8f48d62b3fd217317f229d4c4b\transformed\ui-test-manifest-1.3.3\AndroidManifest.xml:24:13-63
+83            android:exported="true" />
+83-->[androidx.compose.ui:ui-test-manifest:1.3.3] C:\Users\spela\.gradle\caches\transforms-3\3e3e4f8f48d62b3fd217317f229d4c4b\transformed\ui-test-manifest-1.3.3\AndroidManifest.xml:25:13-36
+84        <activity
+84-->[com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\spela\.gradle\caches\transforms-3\6973e07a6ae8e54e7c693a73bbc74cd0\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:47:9-53:63
+85            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+85-->[com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\spela\.gradle\caches\transforms-3\6973e07a6ae8e54e7c693a73bbc74cd0\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:48:13-74
+86            android:clearTaskOnLaunch="true"
+86-->[com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\spela\.gradle\caches\transforms-3\6973e07a6ae8e54e7c693a73bbc74cd0\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:49:13-45
+87            android:screenOrientation="sensorLandscape"
+87-->[com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\spela\.gradle\caches\transforms-3\6973e07a6ae8e54e7c693a73bbc74cd0\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:50:13-56
+88            android:stateNotNeeded="true"
+88-->[com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\spela\.gradle\caches\transforms-3\6973e07a6ae8e54e7c693a73bbc74cd0\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:51:13-42
+89            android:theme="@style/zxing_CaptureTheme"
+89-->[com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\spela\.gradle\caches\transforms-3\6973e07a6ae8e54e7c693a73bbc74cd0\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:52:13-54
+90            android:windowSoftInputMode="stateAlwaysHidden" />
+90-->[com.journeyapps:zxing-android-embedded:4.2.0] C:\Users\spela\.gradle\caches\transforms-3\6973e07a6ae8e54e7c693a73bbc74cd0\transformed\zxing-android-embedded-4.2.0\AndroidManifest.xml:53:13-60
+91
+92        <provider
+92-->[com.google.firebase:firebase-common:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\b01d0a4518fcf1117dcaa779845df24b\transformed\firebase-common-20.3.0\AndroidManifest.xml:25:9-30:39
+93            android:name="com.google.firebase.provider.FirebaseInitProvider"
+93-->[com.google.firebase:firebase-common:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\b01d0a4518fcf1117dcaa779845df24b\transformed\firebase-common-20.3.0\AndroidManifest.xml:26:13-77
+94            android:authorities="com.example.drinkingapp.firebaseinitprovider"
+94-->[com.google.firebase:firebase-common:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\b01d0a4518fcf1117dcaa779845df24b\transformed\firebase-common-20.3.0\AndroidManifest.xml:27:13-72
+95            android:directBootAware="true"
+95-->[com.google.firebase:firebase-common:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\b01d0a4518fcf1117dcaa779845df24b\transformed\firebase-common-20.3.0\AndroidManifest.xml:28:13-43
+96            android:exported="false"
+96-->[com.google.firebase:firebase-common:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\b01d0a4518fcf1117dcaa779845df24b\transformed\firebase-common-20.3.0\AndroidManifest.xml:29:13-37
+97            android:initOrder="100" />
+97-->[com.google.firebase:firebase-common:20.3.0] C:\Users\spela\.gradle\caches\transforms-3\b01d0a4518fcf1117dcaa779845df24b\transformed\firebase-common-20.3.0\AndroidManifest.xml:30:13-36
+98
+99        <activity
+99-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\spela\.gradle\caches\transforms-3\37891b7f593eebab446a9063ca59fb42\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+100            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+100-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\spela\.gradle\caches\transforms-3\37891b7f593eebab446a9063ca59fb42\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+101            android:exported="false"
+101-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\spela\.gradle\caches\transforms-3\37891b7f593eebab446a9063ca59fb42\transformed\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+102            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+102-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\spela\.gradle\caches\transforms-3\37891b7f593eebab446a9063ca59fb42\transformed\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+103
+104        <meta-data
+104-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\spela\.gradle\caches\transforms-3\731234668381f94d0ca2f0205877f02b\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+105            android:name="com.google.android.gms.version"
+105-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\spela\.gradle\caches\transforms-3\731234668381f94d0ca2f0205877f02b\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+106            android:value="@integer/google_play_services_version" />
+106-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\spela\.gradle\caches\transforms-3\731234668381f94d0ca2f0205877f02b\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+107
+108        <provider
+108-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:25:9-33:20
+109            android:name="androidx.startup.InitializationProvider"
+109-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:26:13-67
+110            android:authorities="com.example.drinkingapp.androidx-startup"
+110-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:27:13-68
+111            android:exported="false" >
+111-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:28:13-37
+112            <meta-data
+112-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:30:13-32:52
+113                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+113-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:31:17-85
+114                android:value="androidx.startup" />
+114-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:32:17-49
+115        </provider>
+116
+117        <receiver
+117-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:35:9-47:20
+118            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+118-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:36:13-76
+119            android:directBootAware="false"
+119-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:37:13-44
+120            android:enabled="true"
+120-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:38:13-35
+121            android:exported="true"
+121-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:39:13-36
+122            android:permission="android.permission.DUMP" >
+122-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:40:13-57
+123            <intent-filter>
+123-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:41:13-43:29
+124                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+124-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:42:17-91
+124-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:42:25-88
+125            </intent-filter>
+126            <intent-filter>
+126-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:44:13-46:29
+127                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+127-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:45:17-85
+127-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\spela\.gradle\caches\transforms-3\e11553d983488f0a46d61fe48b16145b\transformed\profileinstaller-1.2.0\AndroidManifest.xml:45:25-82
+128            </intent-filter>
+129        </receiver>
+130    </application>
+131
+132</manifest>
