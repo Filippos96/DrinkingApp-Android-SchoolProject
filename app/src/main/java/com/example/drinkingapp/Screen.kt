@@ -5,6 +5,7 @@ sealed class Screen(val route: String){
     object GameMode: Screen(route = "GameModeScreen")
     object LobbyHost: Screen(route = "LobbyHostScreen")
     object LobbyGuest: Screen(route = "LobbyGuestScreen")
+    object LobbyScreen: Screen(route = "LobbyScreen")
     object CreatePrompt: Screen(route = "CreatePromptScreen")
     object Waiting: Screen(route = "WaitingScreen")
     object Questions: Screen(route = "QuestionScreen")

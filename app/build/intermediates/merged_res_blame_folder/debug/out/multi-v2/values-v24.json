@@ -4,7 +4,7 @@
             "outputFile": "com.example.drinkingapp-mergeDebugResources-53:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\bima20dz\\.gradle\\caches\\transforms-3\\fb821f46058423c3cf251632ff3e195b\\transformed\\media-1.0.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\spela\\.gradle\\caches\\transforms-3\\fb821f46058423c3cf251632ff3e195b\\transformed\\media-1.0.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

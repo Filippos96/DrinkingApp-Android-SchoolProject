@@ -57,6 +57,12 @@ fun SetupNavGraph(
         }
 
         composable(
+            route = Screen.LobbyScreen.route,
+        ) {
+            LobbyScreen(navController, gameRoomViewModel)
+        }
+
+        composable(
             route = Screen.CreatePrompt.route,
         ) {
             CreatePrompt(navController, gameRoomViewModel)

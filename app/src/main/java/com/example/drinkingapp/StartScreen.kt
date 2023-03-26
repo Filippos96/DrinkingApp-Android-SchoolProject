@@ -40,7 +40,7 @@ fun StartScreen(
     gameRoomViewModel: GameRoomViewModel
 ) {
     var popupControl by remember {
-        mutableStateOf((true))
+        mutableStateOf(true)
     }
     var blurControl by remember {
         mutableStateOf(10)
@@ -78,6 +78,8 @@ fun StartScreen(
             })
 
     }
+
+
 
     if (popupControl) {
         Column() {

@@ -147,7 +147,7 @@ fun GetStartedScreen(
                             if (isValid) {
                                 val finalLobbyKey = if (scannedLobbyKey.isNotEmpty()) scannedLobbyKey else lobbyKey
                                 gameRoomViewModel.joinLobby(username, finalLobbyKey, navController)
-                                navController.navigate(route = Screen.LobbyGuest.route)
+                                navController.navigate(route = Screen.LobbyScreen.route)
                             }
                         })
                     }

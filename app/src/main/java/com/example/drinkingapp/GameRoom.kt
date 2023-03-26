@@ -21,11 +21,14 @@ import com.google.zxing.WriterException
 import com.google.zxing.common.BitMatrix
 import android.app.Activity
 import android.content.Intent
+import android.media.Image
 import com.google.zxing.integration.android.IntentIntegrator
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.unit.Dp
 import com.journeyapps.barcodescanner.BarcodeEncoder
 
 data class Lobby(
@@ -105,7 +108,7 @@ class GameRoomViewModel() : ViewModel() {
     var qrCodeBitmap by mutableStateOf(android.graphics.Bitmap.createBitmap(1, 1, android.graphics.Bitmap.Config.ARGB_8888).asImageBitmap())
 
     // This function generates the QR code
-    fun generateQRCode(text: String, width: Int = 200, height: Int = 200) {
+    fun generateQRCode(text: String, width: Int, height: Int) {
         val multiFormatWriter = MultiFormatWriter()
         val bitMatrix = multiFormatWriter.encode(text, BarcodeFormat.QR_CODE, width, height)
         val barcodeEncoder = BarcodeEncoder()
@@ -202,8 +205,8 @@ class GameRoomViewModel() : ViewModel() {
                     lobbyToJoin.players = updatedPlayers
                     lobbiesRef.child(lobbyToJoin.lobbyKey).setValue(lobbyToJoin)
 
-                    // Navigate to the LobbyGuest screen
-                    navController.navigate(route = Screen.LobbyGuest.route) {
+                    // Navigate to the Lobby screen
+                    navController.navigate(route = Screen.LobbyScreen.route) {
                         popUpTo(navController.graph.startDestinationId) {
                             saveState = true
                         }

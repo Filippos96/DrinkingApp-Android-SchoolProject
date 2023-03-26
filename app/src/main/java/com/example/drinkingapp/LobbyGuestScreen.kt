@@ -71,8 +71,13 @@ fun LobbyGuestScreen(
                 }
             }
 
+
             Spacer(modifier = Modifier.height(20.dp))
         }
+        Text(text = "Lobby code is: ${gameRoomViewModel.lobbyKey.value}")
+
+        // Add this line to display the QR code image
+        Image(bitmap = gameRoomViewModel.qrCodeBitmap, contentDescription = "QR Code")
 
         OrangeButton(
             navController = navController,

@@ -43,7 +43,7 @@ fun GameModeSelectionScreen(
             ),
             onClick = {
                 gameRoomViewModel.createNewLobby(username, navController)
-                navController.navigate(Screen.LobbyHost.route)
+                navController.navigate(Screen.LobbyScreen.route)
             }
         )
 

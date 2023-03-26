@@ -27,7 +27,7 @@ fun LobbyHostScreen(
     gameRoomViewModel: GameRoomViewModel
 ) {
     LaunchedEffect(gameRoomViewModel.lobbyKey.value) {
-        gameRoomViewModel.generateQRCode(gameRoomViewModel.lobbyKey.value)
+        //gameRoomViewModel.generateQRCode(gameRoomViewModel.lobbyKey.value)
     }
     Column(
         modifier = Modifier
