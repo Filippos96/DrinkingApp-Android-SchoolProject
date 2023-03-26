@@ -46,18 +46,18 @@ fun CreatePrompt(
 
         NavbarTop(screenName = stringResource(R.string.create_prompt), backButton = false, navController = navController)
 
-        Spacer(modifier = Modifier.height(70.dp))
+        Spacer(modifier = Modifier.height(175.dp))
 
         Image(
-            painter = painterResource(id = R.drawable.getstarted),
+            painter = painterResource(id = R.drawable.martini),
             contentDescription = "Drink",
             modifier = Modifier.size(160.dp)
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(25.dp))
 
         Text(text = stringResource(R.string.whos_most_likely_to))
-
+        Spacer(modifier = Modifier.height(25.dp))
         OutlinedTextField(
             value = prompt,
             onValueChange = { prompt = it },

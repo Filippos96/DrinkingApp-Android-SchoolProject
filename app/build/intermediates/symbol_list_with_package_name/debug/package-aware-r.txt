@@ -126,6 +126,7 @@ dimen subtitle_corner_radius
 dimen subtitle_outline_width
 dimen subtitle_shadow_offset
 dimen subtitle_shadow_radius
+drawable beer
 drawable blackbackground
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -151,6 +152,7 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable martini
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low

@@ -125,6 +125,7 @@ int dimen subtitle_corner_radius 0x7f030016
 int dimen subtitle_outline_width 0x7f030017
 int dimen subtitle_shadow_offset 0x7f030018
 int dimen subtitle_shadow_radius 0x7f030019
+int drawable beer 0x7f040026
 int drawable blackbackground 0x7f040001
 int drawable common_full_open_on_phone 0x7f040002
 int drawable common_google_signin_btn_icon_dark 0x7f040003
@@ -150,6 +151,7 @@ int drawable googleg_disabled_color_18 0x7f040016
 int drawable googleg_standard_color_18 0x7f040017
 int drawable ic_launcher_background 0x7f040018
 int drawable ic_launcher_foreground 0x7f040019
+int drawable martini 0x7f040027
 int drawable notification_action_background 0x7f04001a
 int drawable notification_bg 0x7f04001b
 int drawable notification_bg_low 0x7f04001c
